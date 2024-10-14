@@ -9,17 +9,23 @@ public class Game {
     private final Item[] items = new Item[10]; //change this value later when we now how many different items exist in the game
     private final Building building = new Building();
 
-    public Game() {}
+    public Game() {
+
+    }
 
     public void startGame(){
         System.out.println("Choose your name");
-        String name = sc.nextLine();
+        String name = sc.nextLine().trim();
+        while(name.isEmpty()){
+            System.out.println("The name cannot be empty, please choose a name");
+            name = sc.nextLine().trim();
+        }
         player = new Player(name);
     }
 
     public Item getItem(String itemName) {
         for(Item item : items){
-            if(item.getName().equals(itemName)){
+            if(item != null && item.getName().equals(itemName)){
                 return item;
             }
         }
