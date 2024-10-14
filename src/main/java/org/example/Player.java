@@ -8,6 +8,6 @@ public class Player {
         this.name = name;
     }
     public String getName() {
-        return null;
+        return name;
     }
 }
