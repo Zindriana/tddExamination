@@ -9,16 +9,20 @@ public class Game {
     private final Building building = new Building();
 
     public Game(String name) {
-        this.player = new Player(name);
+        this.player = new Player(/*name*/); //add the argument when Player class is updated
     }
 
     public Item getItem(String itemName) {
         for(Item item : items){
-            if(item.equals(itemName)){
+            if(item.getName().equals(itemName)){
                 return item;
             }
         }
         return null;
+    }
+
+    public Player getPlayer() {
+        return player;
     }
 
 }
