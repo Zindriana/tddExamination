@@ -5,9 +5,9 @@ import java.util.List;
 public class Room {
 
     //fields
-    private int roomNumber;
-    private String name;
-    private String description;
+    private final int roomNumber;
+    private final String name;
+    private final String description;
     private List<Item> items;
 
     //constructors
@@ -29,5 +29,7 @@ public class Room {
     public String getDescription() {
         return description;
     }
+
+    
 
 }
