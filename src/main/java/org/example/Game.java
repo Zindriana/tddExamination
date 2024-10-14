@@ -21,6 +21,7 @@ public class Game {
             name = sc.nextLine().trim();
         }
         player = new Player(name);
+        System.out.println("Hello " + getPlayer().getName() + ". Welcome to my dungeon. To get out you need to solve my puzzles!");
     }
 
     public Item getItem(String itemName) {
