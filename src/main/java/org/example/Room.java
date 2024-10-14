@@ -30,6 +30,10 @@ public class Room {
         return description;
     }
 
+    // investigate Room
+    public void investigate() {
+
+    }
 
 
 }
