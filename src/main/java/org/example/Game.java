@@ -1,15 +1,20 @@
 package org.example;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Game {
-
-    private final Player player;
+    private Scanner sc = new Scanner(System.in);
+    private Player player;
     private final Item[] items = new Item[10]; //change this value later when we now how many different items exist in the game
     private final Building building = new Building();
 
-    public Game(String name) {
-        this.player = new Player(/*name*/); //add the argument when Player class is updated
+    public Game() {}
+
+    public void startGame(){
+        System.out.println("Choose your name");
+        String name = sc.nextLine();
+        player = new Player(name);
     }
 
     public Item getItem(String itemName) {

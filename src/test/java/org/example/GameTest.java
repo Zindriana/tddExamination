@@ -10,10 +10,10 @@ class GameTest {
 
     @Test
     void createGameTest(){
-        Player player = mock(Player.class);
-        Game game = new Game("David");
-        when(player.getName()).thenReturn("David");
-        game.getPlayer().getName();
+        Game game = new Game();
+        Player player1 = mock(Player.class);
+        game.startGame();
+        when(player1.getName()).thenReturn("David");
 
         assertEquals("David", game.getPlayer().getName());
 
