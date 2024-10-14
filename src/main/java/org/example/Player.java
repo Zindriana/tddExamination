@@ -13,6 +13,29 @@ public class Player {
         this.name = name;
     }
 
+    public void moveForward(){
+        currentRoom++;
+    }
+    public void moveBack(){
+        currentRoom--;
+    }
+    public void checkBackpack(){
+        for(Item item : backpack){
+            System.out.println(item);
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCurrentRoom() {
+        return currentRoom;
+    }
+
+    public void setCurrentRoom(int currentRoom) {
+        this.currentRoom = currentRoom;
+    }
 }
 
 
