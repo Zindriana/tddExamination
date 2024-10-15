@@ -11,14 +11,15 @@ public class Room {
     private final String descriptionWhenEnteringRoom;
     private final String descriptionOnInvestigateRoom;
     public List<Item> itemsInRoom = new ArrayList<Item>();
-    public NPC npcInRoom;
+    private NPC npcInRoom;
 
     //constructors
-    public Room(int roomNumber, String name, String descriptionWhenEnteringRoom, String descriptionOnInvestigateRoom)  {
+    public Room(int roomNumber, String name, String descriptionWhenEnteringRoom, String descriptionOnInvestigateRoom, NPC npcInRoom)  {
         this.roomNumber = roomNumber;
         this.name = name;
         this.descriptionWhenEnteringRoom = descriptionWhenEnteringRoom;
         this.descriptionOnInvestigateRoom = descriptionOnInvestigateRoom;
+        this.npcInRoom = npcInRoom;
 
     }
 
@@ -41,6 +42,12 @@ public class Room {
     
     public NPC getNpcInRoom() {
         return npcInRoom;
+    }
+
+    //setters
+    public void setNpcInRoom(NPC npcInRoom) {
+        this.npcInRoom = npcInRoom;
+
     }
 
 

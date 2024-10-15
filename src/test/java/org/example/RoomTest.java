@@ -10,10 +10,12 @@ import static org.mockito.Mockito.when;
 
 class RoomTest {
 
+    NPC npc = new NPC();
+
     @Test
     void testGetRoomNumber() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate");
+        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
 
         //when
         int expectedRoomNumber = room.getRoomNumber();
@@ -25,7 +27,7 @@ class RoomTest {
     @Test
     void testGetRoomName() {
         //given
-        Room room = new Room(2,"Test Room", "This is a test room", "Test description of investigate");
+        Room room = new Room(2,"Test Room", "This is a test room", "Test description of investigate", npc);
 
         //when
         String expectedRoomName = room.getName();
@@ -37,7 +39,7 @@ class RoomTest {
     @Test
     void testGetRoomDescription() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate");
+        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
         //when
         String expectedEnteringRoomDescription = room.getDescriptionWhenEnteringRoom();
 
@@ -48,7 +50,7 @@ class RoomTest {
     @Test
     void testGetDescriptionOnInvestigateRoom() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate");
+        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
 
         //when
         String expectedDescriptionOfInvestigate = room.getDescriptionOnInvestigateRoom();
@@ -61,7 +63,7 @@ class RoomTest {
     @Test
     void testGetListOfItems() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate");
+        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
 
         Item item1 = mock(Item.class);
         Item item2 = mock(Item.class);
@@ -90,16 +92,13 @@ class RoomTest {
     @Test
     void testInvestigateNPCInRoom() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate");
+        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
 
         NPC npc1 = mock(NPC.class);
+        room.setNpcInRoom(npc1);
 
         //when
         when(npc1.getName()).thenReturn("Guard");
-
-
-        room.npcInRoom = npc1;
-
 
 
         // then
@@ -110,16 +109,14 @@ class RoomTest {
     @Test
     void testGetNpcInRoom() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate");
+        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
 
         NPC npc2 = mock(NPC.class);
+        room.setNpcInRoom(npc2);
 
         //when
         when(npc2.getName()).thenReturn("Driver");
         when(npc2.getDescription()).thenReturn("Short guy, long hands and sunglasses");
-
-        room.npcInRoom = npc2;
-
 
 
         // then
