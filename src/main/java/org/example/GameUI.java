@@ -25,19 +25,27 @@ public class GameUI {
              case 1:
                  try {  // try catch block för att inte krasha koden när undantaget för att flytta för långt fram kastas
                      player.moveForward();
-                     System.out.println("You have moved to room" + player.getCurrentRoom());
+                     System.out.println("You have moved to room " + player.getCurrentRoom() + "\n");
                  } catch (IllegalStateException e) {
                      System.out.println(e.getMessage());
                  }
                  break;
 
              case 2:
-                 player.moveBack();
-                 System.out.println("You have moved to room" + player.getCurrentRoom());
+                 try {
+                     player.moveBack();
+                     System.out.println("You have moved to room " + player.getCurrentRoom() + "\n");
+                 } catch (IllegalStateException e) {
+                     System.out.println(e.getMessage());
+                 }
                  break;
 
              case 3:
-                 player.checkBackpack();
+                 try {
+                     player.checkBackpack();
+                 } catch (IllegalStateException e) {
+                     System.out.println(e.getMessage());
+                 }
                  break;
 
              case 4:
