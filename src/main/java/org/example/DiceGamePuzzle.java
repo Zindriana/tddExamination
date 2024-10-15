@@ -5,16 +5,17 @@ import java.util.Scanner;
 
 public class DiceGamePuzzle extends Puzzles {
     private int targetNumber;
+    private Random random;
     private static final int MIN_ROLL = 3;
 
-    public DiceGamePuzzle(String description, int targetNumber) {
+    public DiceGamePuzzle(String description, int targetNumber, Random random) {
         super(description);
         this.targetNumber = targetNumber;
+        this.random = random;
     }
 
     @Override
     public boolean solve() {
-        Random rand = new Random();
         Scanner scanner = new Scanner(System.in);
         int roll;
 
@@ -24,7 +25,7 @@ public class DiceGamePuzzle extends Puzzles {
             System.out.println("Press Enter to roll the dice...");
             scanner.nextLine();
 
-            roll = rand.nextInt(6) + 1;  // Dice roll between 1 and 6
+            roll = random.nextInt(6) + 1;
             System.out.println("You rolled a " + roll);
 
             if (roll < 3) {
@@ -40,8 +41,9 @@ public class DiceGamePuzzle extends Puzzles {
             return false;
         }
     }
+
     public boolean solveWithMockRoll(int mockRoll) {
-        // If mockRoll is less than 1 or more than 6, it's invalid
+        // Validate the mock roll
         if (mockRoll < 1 || mockRoll > 6) {
             throw new IllegalArgumentException("Mock roll must be between 1 and 6");
         }

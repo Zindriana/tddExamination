@@ -2,9 +2,12 @@ package org.example;
 
 public class NPC {
 
-    private String name;
-
     public String getName() {
-        return name;
+        return null;
+    }
+
+    public String getDescription() {
+        return null;
+
     }
 }

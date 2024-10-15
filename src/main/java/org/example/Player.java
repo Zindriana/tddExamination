@@ -16,22 +16,22 @@ public class Player {
 
     public void moveForward(){
         if(currentRoom == building.getNumberOfRooms() -1){
-            throw new IllegalStateException("You cant move forward, room " + currentRoom + " is the last room");
+            throw new IllegalStateException("You cant move forward, room " + currentRoom + " is the last room\n");
         }
         currentRoom++;
     }
     public void moveBack(){
         if(currentRoom == 0){
-            throw new IllegalStateException("You cant move back, room 0 is the first room");
+            throw new IllegalStateException("You cant move back, room 0 is the first room\n");
         }
         currentRoom--;
     }
     public void checkBackpack(){
         if(backpack.isEmpty()){
-            throw new IllegalStateException("There are no items in the backpack");
+            throw new IllegalStateException("There are no items in the backpack\n");
         }
         for(Item item : backpack){
-            System.out.println(item);
+            System.out.println("The items in your backpack is: \n" + item + "\n");
         }
     }
 
