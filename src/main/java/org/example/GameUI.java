@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class GameUI {
 
     private Player player;
-    private Room room;
+    //private Room room;
 
-    public void roomOption(Player player, Room room) {
+    public void roomOption(Player player) {
 
         Scanner sc = new Scanner(System.in);
         boolean on = true;

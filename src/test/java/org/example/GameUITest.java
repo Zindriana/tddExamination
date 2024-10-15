@@ -28,7 +28,7 @@ class GameUITest {
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        gameUI.roomOption(player, room);
+        gameUI.roomOption(player);
 
         assertEquals(2, player.getCurrentRoom());
     }
