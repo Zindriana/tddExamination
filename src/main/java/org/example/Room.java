@@ -57,5 +57,4 @@ public class Room {
     }
 
 
-    // investigate Room for npc and then get the object from npc class
 }
