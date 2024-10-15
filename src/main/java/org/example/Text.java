@@ -2,35 +2,43 @@ package org.example;
 
 public class Text {
 
+    //room
+    public String getRoomDescriptionWhenEnter(String roomName){
+        switch(roomName){
+            case "Starting room":
+                return "You return to the starting room";
+            case "Middle room":
+                return "You enter a dark cavern";
+            default:
+                return null;
+        }
+    }
+
+    public String getRoomDescriptionWhenInvestigate(String roomName){
+        switch(roomName){
+            case "Starting room":
+                return " The room is barely lit by a few candles and you feel a light breeze. " +
+                        "You see something bright and small on the dark stone floor. It is " + getItemDie() +
+                        " You also see a " + getNpcHoodedFigure() +  " standing next to a large wooden door. It seems like the door is the only way out of here. ";
+            case "Middle room":
+                return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet";
+            default:
+                return null;
+        }
+    }
+
+
     //items
-    private final String die = " A bright white six-sided die. ";
+    public String getItemDie(){
+        return "A bright white six-sided die.";
+    }
 
     //npc
-    private String HoodedFigure = " ";
-
-    //rooms
-    private String startingRoomEnter = "You return to the starting room";
-    private String startingRoomWhenInvestigate = " The room is barely lit by a few candles and you feel a light breeze. " +
-            "You see something bright and small on the dark stone floor. It is " + getItemDescription(die) +
-            " You also see a hooded figure standing next to a large wooden door. It seems like the door is the only way out of here. ";
-    private String middleRoomEnter = "You enter a dark cavern";
-    private String middleRoomWhenInvestigate = " You hear droplets drop on the floor and floor is cold against your bare feet";
-
-    public String getRoomEnterDescription(String roomName){
-        return roomName;
+    public String getNpcHoodedFigure(){
+        return "hooded figure";
     }
+//    public String get(){
+//        return ;
+//    }
 
-    public String getRoomInvestigateDescription(String roomName){
-        return roomName;
-    }
-
-
-    public String getItemDescription(String itemName){
-        return itemName;
-    }
-
-
-    public String getNpcDescription(String npcName){
-        return npcName;
-    }
 }
