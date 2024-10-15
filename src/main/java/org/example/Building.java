@@ -2,7 +2,13 @@ package org.example;
 
 public class Building {
 
+    private Room[] rooms;
+
     public Building(){
-        Room[] rooms = new Room[4];
+        rooms = new Room[4];
+    }
+
+    public int getNumberOfRooms() {
+        return rooms.length;
     }
 }

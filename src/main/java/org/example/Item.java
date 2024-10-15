@@ -30,6 +30,7 @@ public class Item {
     }
 
     // Getters för name och description
+
     public String getName() {
         return name;
     }
@@ -46,5 +47,4 @@ public class Item {
     public void setDescription(String description) {
         this.description = description;
     }
-
 }
