@@ -9,17 +9,24 @@ public class MathQuestionPuzzle extends Puzzles {
 
     public MathQuestionPuzzle(String description) {
         super(description);
-
         Random random = new Random();
         this.number1 = random.nextInt(100) + 1;
         this.number2 = random.nextInt(100) + 1;
+    }
+
+    // Getter methods
+    public int getNumber1() {
+        return number1;
+    }
+
+    public int getNumber2() {
+        return number2;
     }
 
     @Override
     public boolean solve() {
         Scanner scanner = new Scanner(System.in);
         boolean solved = false;
-
 
         while (!solved) {
             System.out.println(description);
@@ -36,5 +43,10 @@ public class MathQuestionPuzzle extends Puzzles {
         }
 
         return solved;
+    }
+
+    // Method to simulate solving with a mock answer
+    public boolean solveWithMockAnswer(int answer) {
+        return answer == (number1 + number2);
     }
 }
