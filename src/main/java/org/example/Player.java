@@ -8,14 +8,15 @@ public class Player {
     private String name;
     private int currentRoom;
     public List<Item> backpack = new ArrayList<Item>();
+    Building building = new Building();
 
     public Player(String name){
         this.name = name;
     }
 
     public void moveForward(){
-        if(currentRoom == 3){
-            throw new IllegalStateException("You cant move forward, room 3 is the last room");
+        if(currentRoom == building.getNumberOfRooms() -1){
+            throw new IllegalStateException("You cant move forward, room " + currentRoom + " is the last room");
         }
         currentRoom++;
     }
