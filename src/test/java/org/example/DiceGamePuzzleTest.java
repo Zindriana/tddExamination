@@ -18,7 +18,7 @@ class DiceGamePuzzleTest {
         // Simulate 100 dice rolls and check that they are within the expected range
         for (int i = 0; i < 100; i++) {
             int roll = random.nextInt(6) + 1;
-            assertTrue( roll <= 0, "Dice roll is out of range: " + roll);
+            assertTrue(roll >= 1 && roll <= 6, "Dice roll is out of range: " + roll);
         }
     }
 
