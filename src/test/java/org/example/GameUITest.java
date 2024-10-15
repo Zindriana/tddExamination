@@ -11,13 +11,14 @@ class GameUITest {
     private Player player;
     private GameUI gameUI;
     private Room room;
+    private NPC npc;
 
     @BeforeEach
     void setUp() {
         player = new Player("Adam");
         player.setCurrentRoom(1);
         gameUI = new GameUI();
-        room = new Room();
+        room = new Room(1, "test", "test", "test", npc);
     }
 
     @Test
