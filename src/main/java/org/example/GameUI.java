@@ -23,8 +23,12 @@ public class GameUI {
 
          switch(choice) {
              case 1:
-                 player.moveForward();
-                 System.out.println("You have moved to room" + player.getCurrentRoom());
+                 try {  // try catch block för att inte krasha koden när undantaget för att flytta för långt fram kastas
+                     player.moveForward();
+                     System.out.println("You have moved to room" + player.getCurrentRoom());
+                 } catch (IllegalStateException e) {
+                     System.out.println(e.getMessage());
+                 }
                  break;
 
              case 2:
