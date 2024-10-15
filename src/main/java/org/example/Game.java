@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -22,6 +21,7 @@ public class Game {
             name = sc.nextLine().trim();
         }
         player = new Player(name);
+        player.setCurrentRoom(0);
         System.out.println("Hello " + getPlayer().getName() + ". Welcome to my dungeon. To get out you need to solve my puzzles!");
     }
 
