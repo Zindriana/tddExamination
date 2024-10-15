@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class DiceGamePuzzle extends Puzzles {
     private int targetNumber;
+    private static final int MIN_ROLL = 3;
 
     public DiceGamePuzzle(String description, int targetNumber) {
         super(description);
@@ -29,10 +30,33 @@ public class DiceGamePuzzle extends Puzzles {
             if (roll < 3) {
                 System.out.println("You rolled less than 3. Try again!");
             }
-        } while (roll < 3); // Continue rolling until the roll is 3 or higher
+        } while (roll < 3);
 
-        // Check if the final roll is higher than the target number
         if (roll > targetNumber) {
+            System.out.println("Congratulations! You rolled higher than " + targetNumber);
+            return true;
+        } else {
+            System.out.println("Sorry, you rolled less than or equal to " + targetNumber);
+            return false;
+        }
+    }
+    public boolean solveWithMockRoll(int mockRoll) {
+        // If mockRoll is less than 1 or more than 6, it's invalid
+        if (mockRoll < 1 || mockRoll > 6) {
+            throw new IllegalArgumentException("Mock roll must be between 1 and 6");
+        }
+
+        System.out.println(getDescription());
+        System.out.println("Mock roll value is " + mockRoll);
+
+        // Check if the roll is lower than the minimum required
+        if (mockRoll < MIN_ROLL) {
+            System.out.println("You rolled less than " + MIN_ROLL + ". Try again!");
+            return false; // Since this simulates a fail case
+        }
+
+        // Check if the roll is higher than the target number
+        if (mockRoll > targetNumber) {
             System.out.println("Congratulations! You rolled higher than " + targetNumber);
             return true;
         } else {

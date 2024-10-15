@@ -2,8 +2,7 @@ name: Unit test
 
 on:
   push:
-    branches: [ "dev" ]
-
+    branches: [ "Puzzles" ]
 
 jobs:
   build:
