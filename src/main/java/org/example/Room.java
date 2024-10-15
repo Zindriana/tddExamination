@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Room {
@@ -7,17 +8,18 @@ public class Room {
     //fields
     private final int roomNumber;
     private final String name;
-    private final String descriptionEnter;
-    private final String descriptionOfInvestigate;
-    private List<Item> items;
-    private NPC npc;
+    private final String descriptionWhenEnteringRoom;
+    private final String descriptionOnInvestigateRoom;
+    public List<Item> itemsInRoom = new ArrayList<Item>();
+    public NPC npcInRoom;
 
     //constructors
-    public Room(int roomNumber, String name, String descriptionEnter, String descriptionOfInvestigate)  {
+    public Room(int roomNumber, String name, String descriptionWhenEnteringRoom, String descriptionOnInvestigateRoom)  {
         this.roomNumber = roomNumber;
         this.name = name;
-        this.descriptionEnter = descriptionEnter;
-        this.descriptionOfInvestigate = descriptionOfInvestigate;
+        this.descriptionWhenEnteringRoom = descriptionWhenEnteringRoom;
+        this.descriptionOnInvestigateRoom = descriptionOnInvestigateRoom;
+
     }
 
     //getters
@@ -29,18 +31,31 @@ public class Room {
         return name;
     }
 
-    public String getDescription() {
-        return descriptionEnter;
+    public String getDescriptionWhenEnteringRoom() {
+        return descriptionWhenEnteringRoom;
     }
 
-    public String getDescriptionOfInvestigate() {
-        return descriptionOfInvestigate;
+    public String getDescriptionOnInvestigateRoom() {
+        return descriptionOnInvestigateRoom;
     }
+    
+    public NPC getNpcInRoom() {
+        return npcInRoom;
+    }
+
+
+
 
     // investigate Room
-    public void investigate() {
-
+    public List<Item> getListOfItems() {
+        // controls if there are items in the room
+        if (itemsInRoom == null) {
+            System.out.println("There are no items in this room.");
+            return null;
+        }
+        return itemsInRoom;
     }
 
 
+    // investigate Room for npc and then get the object from npc class
 }
