@@ -7,15 +7,17 @@ public class Room {
     //fields
     private final int roomNumber;
     private final String name;
-    private final String description;
+    private final String descriptionEnter;
+    private final String descriptionOfInvestigate;
     private List<Item> items;
     private NPC npc;
 
     //constructors
-    public Room(int roomNumber, String name, String description)    {
+    public Room(int roomNumber, String name, String descriptionEnter, String descriptionOfInvestigate)  {
         this.roomNumber = roomNumber;
         this.name = name;
-        this.description = description;
+        this.descriptionEnter = descriptionEnter;
+        this.descriptionOfInvestigate = descriptionOfInvestigate;
     }
 
     //getters
@@ -28,7 +30,11 @@ public class Room {
     }
 
     public String getDescription() {
-        return description;
+        return descriptionEnter;
+    }
+
+    public String getDescriptionOfInvestigate() {
+        return descriptionOfInvestigate;
     }
 
     // investigate Room
