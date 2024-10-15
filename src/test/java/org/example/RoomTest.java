@@ -39,24 +39,24 @@ class RoomTest {
     @Test
     void testGetRoomDescription() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
+        Room room = new Room(1, "Middle room", "Middle room", "Middle room", npc);
         //when
         String expectedEnteringRoomDescription = room.getDescriptionWhenEnteringRoom();
 
         //then
-        assertEquals("This is a test room", expectedEnteringRoomDescription);
+        assertEquals("You enter a dark cavern", expectedEnteringRoomDescription);
     }
 
     @Test
     void testGetDescriptionOnInvestigateRoom() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
+        Room room = new Room(1, "Middle room", "Middle room", "Middle room", npc);
 
         //when
         String expectedDescriptionOfInvestigate = room.getDescriptionOnInvestigateRoom();
 
         //then
-        assertEquals("Test description of investigate", expectedDescriptionOfInvestigate);
+        assertEquals(" You hear droplets drop on the cavern ground and the stones feel cold against your bare feet", expectedDescriptionOfInvestigate);
     }
 
 
