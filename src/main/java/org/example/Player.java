@@ -14,9 +14,15 @@ public class Player {
     }
 
     public void moveForward(){
+        if(currentRoom == 3){
+            throw new IllegalStateException("You cant move forward, room 3 is the last room");
+        }
         currentRoom++;
     }
     public void moveBack(){
+        if(currentRoom == 0){
+            throw new IllegalStateException("You cant move back, room 0 is the first room");
+        }
         currentRoom--;
     }
     public void checkBackpack(){

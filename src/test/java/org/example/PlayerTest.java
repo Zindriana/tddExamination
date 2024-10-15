@@ -10,11 +10,19 @@ import static org.mockito.Mockito.when;
 class PlayerTest {
 
     private Player player;
+    private Player player2;
+    private Player player3;
 
     @BeforeEach
     void setUp() {
         player = new Player("Adam");
         player.setCurrentRoom(1);
+
+        player2 = new Player("Lorem");
+        player2.setCurrentRoom(3);
+
+        player3 = new Player("Ipsum");
+        player3.setCurrentRoom(0);
     }
 
     @Test
@@ -26,12 +34,18 @@ class PlayerTest {
     public void testMoveForward() {
         player.moveForward();
         assertEquals(2, player.getCurrentRoom());
+
+        Exception exception = assertThrows(IllegalStateException.class, () -> player2.moveForward());
+        assertEquals("You cant move forward, room 3 is the last room", exception.getMessage());
     }
 
     @Test
     public void testMoveBackward() {
         player.moveBack();
         assertEquals(0, player.getCurrentRoom());
+
+        Exception exception = assertThrows(IllegalStateException.class, () -> player3.moveBack());
+        assertEquals("You cant move back, room 0 is the first room", exception.getMessage());
     }
 
     @Test
