@@ -46,7 +46,7 @@ public class Room {
 
 
 
-    // investigate Room
+    // gets a list of all items in the room
     public List<Item> getListOfItems() {
         // controls if there are items in the room
         if (itemsInRoom == null) {
@@ -55,6 +55,8 @@ public class Room {
         }
         return itemsInRoom;
     }
+
+    // investigate Room, descriptions of room, all items and NPC
 
 
 }
