@@ -56,7 +56,7 @@ public class Room {
         return itemsInRoom;
     }
 
-    // investigate Room, descriptions of room, all items and NPC
+    // TODO:investigate Room, descriptions of room, all items and NPC
 
 
 }
