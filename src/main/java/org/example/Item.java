@@ -2,7 +2,10 @@ package org.example;
 
 public class Item {
 
-    public String getName(){
-        return null;
+    private final String name = null;
+
+
+    public String getName() {
+        return name;
     }
 }
