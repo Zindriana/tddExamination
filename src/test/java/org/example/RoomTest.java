@@ -103,7 +103,7 @@ class RoomTest {
 
 
         // then
-        assertEquals("Guard", room.npcInRoom.getName());
+        assertEquals("Guard", room.getNpcInRoom().getName());
 
     }
 
@@ -116,6 +116,7 @@ class RoomTest {
 
         //when
         when(npc2.getName()).thenReturn("Driver");
+        when(npc2.getDescription()).thenReturn("Short guy, long hands and sunglasses");
 
         room.npcInRoom = npc2;
 
@@ -123,7 +124,10 @@ class RoomTest {
 
         // then
         assertEquals("Driver", room.getNpcInRoom().getName());
+        assertEquals("Short guy, long hands and sunglasses", room.getNpcInRoom().getDescription());
     }
+
+
 
 
 }
