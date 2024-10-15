@@ -3,7 +3,9 @@ name: Unit test
 on:
   push:
 
+
     branches: [ "dev", "Adam", "Puzzles", "Zindriana", "Youssef", "NPC", "Mahmoud" ]
+
 
 
 jobs:
