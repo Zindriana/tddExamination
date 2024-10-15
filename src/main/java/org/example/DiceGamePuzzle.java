@@ -52,7 +52,7 @@ public class DiceGamePuzzle extends Puzzles {
         // Check if the roll is lower than the minimum required
         if (mockRoll < MIN_ROLL) {
             System.out.println("You rolled less than " + MIN_ROLL + ". Try again!");
-            return false; // Since this simulates a fail case
+            return false;
         }
 
         // Check if the roll is higher than the target number
