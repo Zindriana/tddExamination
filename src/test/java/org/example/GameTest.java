@@ -3,6 +3,7 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -56,6 +57,18 @@ class GameTest {
         assertNull(game.getItem(""));
         assertNull(game.getItem(" "));
         assertEquals(ExpectedItem, game.getItem("Key"));
+    }
+    @Test
+    void getNPCTest(){
+        Game game = mock(Game.class);
+        NPC ExpectedNPC = mock(NPC.class);
+
+        when(game.getNPC("Mysterious Hooded Figure")).thenReturn(ExpectedNPC);
+
+        assertEquals(ExpectedNPC, game.getNPC("Mysterious Hooded Figure"));
+        assertNull(game.getNPC(""));
+        assertNull(game.getNPC(" "));
+        assertNull(game.getNPC("The Butler"));
     }
 
 }
