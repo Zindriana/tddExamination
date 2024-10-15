@@ -7,7 +7,7 @@ public class Player {
 
     private String name;
     private int currentRoom;
-    private List<Item> backpack = new ArrayList<Item>();
+    public List<Item> backpack = new ArrayList<Item>();
 
     public Player(String name){
         this.name = name;
@@ -20,6 +20,9 @@ public class Player {
         currentRoom--;
     }
     public void checkBackpack(){
+        if(backpack.isEmpty()){
+            throw new IllegalStateException("There are no items in the backpack");
+        }
         for(Item item : backpack){
             System.out.println(item);
         }
