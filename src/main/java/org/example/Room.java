@@ -9,6 +9,7 @@ public class Room {
     private final String name;
     private final String description;
     private List<Item> items;
+    private NPC npc;
 
     //constructors
     public Room(int roomNumber, String name, String description)    {
