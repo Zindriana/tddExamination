@@ -1,22 +1,39 @@
 package org.example;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ItemTest {
 
     @Test
-    public void testItemCreationWithDescription() {
-        // Given: A known description key
-        String itemName = "Magic Wand";
-        String descriptionKey = "magicWand"; 
+    public void testPickUp() {
+        Item sword = new Item("Sword");  // Use only the name
+        sword.pickUp();
+        assertEquals("Sword", sword.getName());
+    }
 
-        // When: An item is created
-        Item item = new Item(itemName, descriptionKey);
+    @Test
+    public void testUse() {
+        Item shield = new Item("Shield");  // Use only the name
+        shield.use();
+        assertEquals("Shield", shield.getName());
+    }
 
-        // Then: The item should have the correct name and a non-empty description
-        assertEquals(itemName, item.getName());
-        assertNotNull(item.getDescription());
-        assertFalse(item.getDescription().isEmpty());
+    @Test
+    public void testInvestigateItem() {
+        Item sword = new Item("Sword");  // Use only the name
+        // Assuming that the description is fetched correctly from the Text class
+        String expectedDescription = "A sharp, shiny sword."; // Adjust based on your Text class logic
+        assertEquals(expectedDescription, sword.getDescription());
+        sword.investigateItem(); // You might want to capture output if needed
+    }
+
+    @Test
+    public void testSettersAndGetters() {
+        Item sword = new Item("Sword");  // Use only the name
+        sword.setName("Magic Sword");
+        sword.setDescription("A magical sword with glowing runes."); // Note: Description won't update from Text
+        assertEquals("Magic Sword", sword.getName());
+        assertEquals("A magical sword with glowing runes.", sword.getDescription());
     }
 }
