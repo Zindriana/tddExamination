@@ -5,7 +5,7 @@ public class Item {
     private String name;
     private String description;
 
-    // Constructor that fetches the description from Text class
+    // Constructor that fetches the description from the Text class
     public Item(String name) {
         this.name = name;
         this.description = new Text().getItemDescription(name); // Fetch description based on name
