@@ -1,28 +1,24 @@
 package org.example;
-import org.example.Text;
-public class Item {
 
-    // Attributes for item name and description
+public class Item {
+ 
     private String name;
     private String description;
-    private final Text output = new Text();
 
-    // Constructor for creating an Item object, now fetching description from Text class
+    // Constructor for creating an Item object with a description from Text
     public Item(String name) {
         this.name = name;
-        this.description = output.getItemDescription(name); // Use name for fetching description
+        this.description = new Text().getItemDescription(name); // Assume you have a method to get the description
     }
 
     // Method to pick up the item
     public void pickUp() {
         System.out.println("You have picked up: " + name);
-        // Logic for adding the item to the player's inventory
     }
 
     // Method to use the item
     public void use() {
         System.out.println("You have used the " + name);
-        // Logic for what happens when the item is used
     }
 
     // Method to investigate the item
@@ -30,7 +26,8 @@ public class Item {
         System.out.println("You investigate the " + name + ". " + description);
     }
 
-    // Getters for name and description
+    // Getters and setters...
+
     public String getName() {
         return name;
     }
@@ -39,7 +36,6 @@ public class Item {
         return description;
     }
 
-    // Setters for name and description
     public void setName(String name) {
         this.name = name;
     }
