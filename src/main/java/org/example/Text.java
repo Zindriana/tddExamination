@@ -53,15 +53,18 @@ public class Text {
     }
 
     //hints
-    public String getRoomHints(String roomName){
+    public static String getRoomHints(String roomName){
         switch(roomName){
             case "Starting room":
                 return " this is a place holder for the hint in room 1";
             case "Middle room":
                 return " this is a place holder for the hint in room 2";
+            case "Third room":
+                return " this is a place holder for the hint in room 3";
+            case "Last room":
+                return " this is a place holder for the hint in room 4";
             default:
                 return null;
         }
     }
-
 }
