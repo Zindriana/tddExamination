@@ -180,7 +180,7 @@ class RoomTest {
     void testRoomInvestigation() {
         //given
         Room room = new Room(0,"Starting room");
-        Item item = new Item("Candle","A thick white candle. It has been used sometime before.");
+        Item item = new Item("Candle");
         room.itemsInRoom.add(item);
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
