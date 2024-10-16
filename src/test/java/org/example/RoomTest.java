@@ -39,24 +39,24 @@ class RoomTest {
     @Test
     void testGetRoomDescription() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
+        Room room = new Room(1, "Middle room", "Middle room", "Middle room", npc);
         //when
         String expectedEnteringRoomDescription = room.getDescriptionWhenEnteringRoom();
 
         //then
-        assertEquals("This is a test room", expectedEnteringRoomDescription);
+        assertEquals("You enter a dark cavern", expectedEnteringRoomDescription);
     }
 
     @Test
     void testGetDescriptionOnInvestigateRoom() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
+        Room room = new Room(1, "Middle room", "Middle room", "Middle room", npc);
 
         //when
         String expectedDescriptionOfInvestigate = room.getDescriptionOnInvestigateRoom();
 
         //then
-        assertEquals("Test description of investigate", expectedDescriptionOfInvestigate);
+        assertEquals(" You hear droplets drop on the cavern ground and the stones feel cold against your bare feet", expectedDescriptionOfInvestigate);
     }
 
 
@@ -124,7 +124,21 @@ class RoomTest {
         assertEquals("Short guy, long hands and sunglasses", room.getNpcInRoom().getDescription());
     }
 
+    @Test
+    void testStartingRoom(){
+        //given
+        NPC npc = mock(NPC.class);
+        Room room = new Room(0, "Starting room",
+                "Starting room", "Starting room", npc);
 
+        //when &
+        assertEquals("You return to the starting room", room.getDescriptionWhenEnteringRoom());
+        assertEquals(" The room is barely lit by a few candles and you feel a light breeze. " +
+                "You see something bright and small on the dark stone floor. It is A bright white six-sided die. " +
+                "You also see a hooded figure standing next to a large wooden door. It seems like the door is the only way out of here. ",
+                room.getDescriptionOnInvestigateRoom());
+
+    }
 
 
 }

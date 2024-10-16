@@ -12,13 +12,14 @@ public class Room {
     private final String descriptionOnInvestigateRoom;
     public List<Item> itemsInRoom = new ArrayList<Item>();
     private NPC npcInRoom;
+    private final Text output = new Text();
 
     //constructors
     public Room(int roomNumber, String name, String descriptionWhenEnteringRoom, String descriptionOnInvestigateRoom, NPC npcInRoom)  {
         this.roomNumber = roomNumber;
         this.name = name;
-        this.descriptionWhenEnteringRoom = descriptionWhenEnteringRoom;
-        this.descriptionOnInvestigateRoom = descriptionOnInvestigateRoom;
+        this.descriptionWhenEnteringRoom = output.getRoomDescriptionWhenEnter(descriptionWhenEnteringRoom);
+        this.descriptionOnInvestigateRoom = output.getRoomDescriptionWhenInvestigate(descriptionOnInvestigateRoom);
         this.npcInRoom = npcInRoom;
 
     }

@@ -37,7 +37,7 @@ class PlayerTest {
         assertEquals(2, player.getCurrentRoom());
 
         Exception exception = assertThrows(IllegalStateException.class, () -> player2.moveForward());
-        assertEquals("You cant move forward, room 3 is the last room", exception.getMessage());
+        assertEquals("You cant move forward, room 3 is the last room\n", exception.getMessage());
     }
 
     @Test
@@ -46,7 +46,7 @@ class PlayerTest {
         assertEquals(0, player.getCurrentRoom());
 
         Exception exception = assertThrows(IllegalStateException.class, () -> player3.moveBack());
-        assertEquals("You cant move back, room 0 is the first room", exception.getMessage());
+        assertEquals("You cant move back, room 0 is the first room\n", exception.getMessage());
     }
 
     @Test
@@ -68,7 +68,7 @@ class PlayerTest {
         //testar att metoden kastar felmeddelande när ryggsäcken är tom
         Exception exception = assertThrows(IllegalStateException.class, () -> player.checkBackpack());
 
-        assertEquals("There are no items in the backpack", exception.getMessage());
+        assertEquals("There are no items in the backpack\n", exception.getMessage());
     }
 
 }

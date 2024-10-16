@@ -1,40 +1,44 @@
 package org.example;
 
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.io.FileOutputStream;
+import java.io.FileDescriptor;
 
 public class ItemTest {
 
-    private Text textMock;
-
-    @BeforeEach
-    public void setUp() {
-        textMock = new Text() {
-            @Override
-            public String getItemDescription(String descriptionKey) {
-                // Mock the descriptions for testing
-                if ("magicWand".equals(descriptionKey)) {
-                    return "A powerful wand that casts spells.";
-                }
-                return null; // or a default description if needed
-            }
-        };
+    @Test
+    public void testPickUp() {
+        Item sword = new Item("Sword");  // Use only the name
+        sword.pickUp();
+        assertEquals("Sword", sword.getName());
     }
 
     @Test
-    public void testItemCreationWithDescription() {
-        // Given: A known description key
-        String itemName = "Magic Wand";
-        String descriptionKey = "magicWand"; // Ensure this key is used in the Item class
+    public void testUse() {
+        Item shield = new Item("Shield");  // Use only the name
+        shield.use();
+        assertEquals("Shield", shield.getName());
+    }
 
-        // When: An item is created
-        Item item = new Item(itemName, descriptionKey);
+    @Test
+    public void testInvestigateItem() {
+        Item sword = new Item("Sword");  // Use only the name
+        String expectedDescription = "A sharp, shiny sword."; // Adjust based on your Text class logic
+        assertEquals(expectedDescription, sword.getDescription());
+        sword.investigateItem(); // You might want to capture output if needed
+    }
 
-        // Then: The item should have the correct name and a non-empty description
-        assertEquals(itemName, item.getName());
-        assertNotNull(item.getDescription()); // Ensure this method returns a valid description
-        assertFalse(item.getDescription().isEmpty());
+    @Test
+    public void testSettersAndGetters() {
+        Item sword = new Item("Sword");  // Use only the name
+        sword.setName("Magic Sword");
+        sword.setDescription("A magical sword with glowing runes."); // Note: Description won't update from Text
+        assertEquals("Magic Sword", sword.getName());
+        assertEquals("A magical sword with glowing runes.", sword.getDescription());
+
     }
 
     // Additional tests can be added here

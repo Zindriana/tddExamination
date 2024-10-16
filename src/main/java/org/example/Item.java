@@ -5,10 +5,12 @@ public class Item {
     private String name;
     private String description;
 
-    // Constructor that fetches the description based on the description key
-    public Item(String name, String descriptionKey) {
+
+    // Constructor that fetches the description from the Text class
+    public Item(String name) {
         this.name = name;
-        this.description = new Text().getItemDescription(descriptionKey); // Fetch description from Text class
+        this.description = new Text().getItemDescription(name); // Fetch description based on name
+
     }
 
     public String getName() {
