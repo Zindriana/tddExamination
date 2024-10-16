@@ -1,40 +1,50 @@
 package org.example;
 
 public class Item {
+
+    // Attributes for item name and description
     private String name;
     private String description;
+    private final Text output = new Text();
 
-    // Konstruktor för att skapa ett nytt Item med namn och beskrivning
-    public Item(String name, String description) {
+    // Constructor for creating an Item object, now fetching description from Text class
+    public Item(String name, String descriptionKey) {
         this.name = name;
-        this.description = description;
+        this.description = output.getItemDescription(descriptionKey); // Fetch description using key
     }
 
-    // Getter för namnet
+    // Method to pick up the item
+    public void pickUp() {
+        System.out.println("You have picked up: " + name);
+        // Logic for adding the item to the player's inventory
+    }
+
+    // Method to use the item
+    public void use() {
+        System.out.println("You have used the " + name);
+        // Logic for what happens when the item is used
+    }
+
+    // Method to investigate the item
+    public void investigateItem() {
+        System.out.println("You investigate the " + name + ". " + description);
+    }
+
+    // Getters for name and description
     public String getName() {
         return name;
     }
 
-    // Getter för beskrivningen
     public String getDescription() {
         return description;
     }
 
-    // Setter för att ändra namnet (om det behövs)
+    // Setters for name and description
     public void setName(String name) {
         this.name = name;
     }
 
-    // Setter för att ändra beskrivningen (om det behövs)
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
     }
 }
