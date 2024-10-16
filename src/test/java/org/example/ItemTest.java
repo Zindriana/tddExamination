@@ -1,7 +1,7 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.io.FileOutputStream;
@@ -38,5 +38,8 @@ public class ItemTest {
         sword.setDescription("A magical sword with glowing runes."); // Note: Description won't update from Text
         assertEquals("Magic Sword", sword.getName());
         assertEquals("A magical sword with glowing runes.", sword.getDescription());
+
     }
+
+    // Additional tests can be added here
 }
