@@ -8,7 +8,7 @@ public class Item {
     // Constructor that fetches the description based on the description key
     public Item(String name, String descriptionKey) {
         this.name = name;
-        this.description = new Text().getItemDescription(descriptionKey); // Adjusted to fetch based on the key
+        this.description = new Text().getItemDescription(descriptionKey); // Fetches the description based on the key
     }
 
     public String getName() {
