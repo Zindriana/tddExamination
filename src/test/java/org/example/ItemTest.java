@@ -20,13 +20,24 @@ public class ItemTest {
     }
 
     @Test
-    public void testInvestigateItem() {
-        Item sword = new Item("Sword");  // Use only the name
-        // Assuming that the description is fetched correctly from the Text class
-        String expectedDescription = "A sharp, shiny sword."; // Adjust based on your Text class logic
-        assertEquals(expectedDescription, sword.getDescription());
-        sword.investigateItem(); // You might want to capture output if needed
-    }
+public void testInvestigateItem() {
+    Item sword = new Item("Sword");  // Use only the name
+    String expectedDescription = "A sharp, shiny sword."; // Expected description
+    assertEquals(expectedDescription, sword.getDescription());
+
+    // Capture the output from investigateItem
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outputStream));
+
+    sword.investigateItem(); 
+
+    // Restore the original System.out
+    System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+
+    // Verify output
+    String expectedOutput = "You investigate the Sword. A sharp, shiny sword.";
+    assertEquals(expectedOutput, outputStream.toString().trim());
+}
 
     @Test
     public void testSettersAndGetters() {
