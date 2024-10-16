@@ -11,17 +11,18 @@ class PlayerTest {
     private Player player;
     private Player player2;
     private Player player3;
+    private Building building;
 
 
     @BeforeEach
     void setUp() {
-        player = new Player("Adam");
+        player = new Player("Adam", building);
         player.setCurrentRoom(1);
 
-        player2 = new Player("Lorem");
+        player2 = new Player("Lorem", building);
         player2.setCurrentRoom(3);
 
-        player3 = new Player("Ipsum");
+        player3 = new Player("Ipsum", building);
         player3.setCurrentRoom(0);
     }
 

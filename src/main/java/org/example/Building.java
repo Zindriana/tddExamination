@@ -2,10 +2,10 @@ package org.example;
 
 public class Building {
 
-    private final Room[] rooms;
+    private final Room[] rooms = new Room[4];
 
     public Building(){
-        rooms = new Room[4];
+
         rooms[0] = new Room(0, "Starting room");
         rooms[1] = new Room(1, "Middle room");
         rooms[2] = new Room(2, "Third room");

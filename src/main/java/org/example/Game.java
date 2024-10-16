@@ -20,7 +20,7 @@ public class Game {
             System.out.println("The name cannot be empty, please choose a name");
             name = sc.nextLine().trim();
         }
-        player = new Player(name);
+        player = new Player(name, building);
         player.setCurrentRoom(0);
         System.out.println("Hello " + getPlayer().getName() + ". Welcome to my dungeon. To get out you need to solve my puzzles!");
     }

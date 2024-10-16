@@ -9,11 +9,12 @@ public class Player {
     private String name;
     private int currentRoom;
     public List<Item> backpack = new ArrayList<Item>();
-    Building building = new Building();
+    private Building building;
 
 
-    public Player(String name){
+    public Player(String name, Building building) {
         this.name = name;
+        this.building = building;
     }
 
     public void moveForward(){
