@@ -1,9 +1,26 @@
 package org.example;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ItemTest {
+
+    private Text textMock;
+
+    @BeforeEach
+    public void setUp() {
+        textMock = new Text() {
+            @Override
+            public String getItemDescription(String descriptionKey) {
+                // Mock the descriptions for testing
+                if ("magicWand".equals(descriptionKey)) {
+                    return "A powerful wand that casts spells.";
+                }
+                return null; // or a default description if needed
+            }
+        };
+    }
 
     @Test
     public void testItemCreationWithDescription() {
