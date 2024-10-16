@@ -44,7 +44,7 @@ public class Text {
     public String getNpcDescriptionWhenInvestigate(String roomName){
         switch(roomName){
             case "Starting room":
-                return " hooded figure ";
+                return "hooded figure";
             case "Middle room":
                 return " place holder for npc description in room 2";
             default:
