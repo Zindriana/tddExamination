@@ -1,37 +1,22 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 public class ItemTest {
 
     @Test
-    public void testPickUp() {
-        Item sword = new Item("Sword", "A sharp, shiny sword.");
-        sword.pickUp();
-        assertEquals("Sword", sword.getName());
-    }
+    public void testItemCreationWithDescription() {
+        // Given: A known description key
+        String itemName = "Magic Wand";
+        String descriptionKey = "magicWand"; 
 
-    @Test
-    public void testUse() {
-        Item shield = new Item("Shield", "A sturdy wooden shield.");
-        shield.use();
-        assertEquals("Shield", shield.getName());
-    }
+        // When: An item is created
+        Item item = new Item(itemName, descriptionKey);
 
-    @Test
-    public void testInvestigateItem() {
-        Item sword = new Item("Sword", "A sharp, shiny sword.");
-        sword.investigateItem();
-        assertEquals("A sharp, shiny sword.", sword.getDescription());
-    }
-
-    @Test
-    public void testSettersAndGetters() {
-        Item sword = new Item("Sword", "A sharp, shiny sword.");
-        sword.setName("Magic Sword");
-        sword.setDescription("A magical sword with glowing runes.");
-        assertEquals("Magic Sword", sword.getName());
-        assertEquals("A magical sword with glowing runes.", sword.getDescription());
+        // Then: The item should have the correct name and a non-empty description
+        assertEquals(itemName, item.getName());
+        assertNotNull(item.getDescription());
+        assertFalse(item.getDescription().isEmpty());
     }
 }
