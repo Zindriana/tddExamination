@@ -10,6 +10,10 @@ public class Text {
                 return "You return to the starting room";
             case "Middle room":
                 return "You enter a dark cavern";
+            case "Third room":
+                return " place holder third room";
+            case "Last room":
+                return " place holder last room";
             default:
                 return null;
         }
@@ -21,10 +25,14 @@ public class Text {
             case "Starting room":
                 return " The room is barely lit by a few candles and you feel a light breeze. " +
                         "You see something bright and small on the dark stone floor. It is " + getItemDescription("Die") +
-                        " You also see a " + getNpcDescription("Starting room") +  " standing next to a large wooden door. It seems like the door is the only way out of here. ";
+                        " You also see a " + getNpcDescription("hooded figure") +  " standing next to a large wooden door. It seems like the door is the only way out of here. ";
 
             case "Middle room":
                 return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet";
+            case "Third room":
+                return " place holder third room";
+            case "Last room":
+                return " place holder last room";
             default:
                 return null;
         }
@@ -34,19 +42,25 @@ public class Text {
         switch(itemName){
             case "Die":
                 return "A bright white six-sided die.";
+            case "Candle":
+                return "A thick white candle. It has been used sometime before.";
+            case "Key" :
+                return "A golden key";
             case "magicWand":
                 return "A wand imbued with magical powers.";
+            case "Sword":
+                return "A sharp, shiny sword.";
             default:
                 return null;
         }
     }
    
     //npc
-    public String getNpcDescription(String roomName){
-        switch(roomName){
-            case "Starting room":
-                return "hooded figure";
-            case "Middle room":
+    public String getNpcDescription(String npcName){
+        switch(npcName){
+            case "hooded figure":
+                return "mysterious hooded figure";
+            case "Another npc":
                 return " place holder for npc description in room 2";
             default:
                 return null;
@@ -54,7 +68,7 @@ public class Text {
     }
 
     //hints
-    public static String getRoomHints(String roomName){
+    public String getRoomHints(String roomName){
         switch(roomName){
             case "Starting room":
                 return " this is a place holder for the hint in room 1";

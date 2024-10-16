@@ -3,7 +3,6 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -71,4 +70,11 @@ class GameTest {
         assertNull(game.getNPC("The Butler"));
     }
 
+    @Test
+    void getRoomTest(){
+        Game game = new Game();
+        String expectedRoom = game.getRoom(0).getName();
+
+        assertEquals("Starting room", expectedRoom);
+    }
 }

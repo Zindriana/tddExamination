@@ -15,13 +15,11 @@ public class Room {
     private final Text output = new Text();
 
     //constructors
-    public Room(int roomNumber, String name, String descriptionWhenEnteringRoom, String descriptionOnInvestigateRoom, NPC npcInRoom)  {
+    public Room(int roomNumber, String name)  {
         this.roomNumber = roomNumber;
         this.name = name;
-        this.descriptionWhenEnteringRoom = output.getRoomDescriptionWhenEnter(descriptionWhenEnteringRoom);
-        this.descriptionOnInvestigateRoom = output.getRoomDescriptionWhenInvestigate(descriptionOnInvestigateRoom);
-        this.npcInRoom = npcInRoom;
-
+        this.descriptionWhenEnteringRoom = output.getRoomDescriptionWhenEnter(name);
+        this.descriptionOnInvestigateRoom = output.getRoomDescriptionWhenInvestigate(name);
     }
 
     //getters
@@ -52,19 +50,27 @@ public class Room {
     }
 
 
-
-
     // gets a list of all items in the room
-    public List<Item> getListOfItems() {
+    public void getListOfItems() {
         // controls if there are items in the room
-        if (itemsInRoom == null) {
+        if (itemsInRoom.isEmpty()) {
             System.out.println("There are no items in this room.");
-            return null;
+        } else {
+            for (Item item : itemsInRoom) {
+                System.out.println(item.getName());
+            }
         }
-        return itemsInRoom;
     }
 
-    // TODO:investigate Room, descriptions of room, all items and NPC
+    //Entering Room
+    public void enterRoom() {
 
+    }
+
+    public void investigateRoom() {
+        System.out.println(getDescriptionOnInvestigateRoom());
+        System.out.println("Items in the room: ");
+        getListOfItems();
+    }
 
 }

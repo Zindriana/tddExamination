@@ -8,6 +8,5 @@ public class Main {
         game.startGame();
         GameUI gameUI = new GameUI();
         gameUI.roomOption(game.getPlayer());
-
     }
 }

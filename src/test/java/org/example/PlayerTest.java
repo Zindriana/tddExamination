@@ -4,25 +4,25 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class PlayerTest {
 
     private Player player;
     private Player player2;
     private Player player3;
+    private final Building building = new Building();
 
 
     @BeforeEach
     void setUp() {
-        player = new Player("Adam");
+        player = new Player("Adam", building);
         player.setCurrentRoom(1);
 
-        player2 = new Player("Lorem");
+        player2 = new Player("Lorem", building);
         player2.setCurrentRoom(3);
 
-        player3 = new Player("Ipsum");
+        player3 = new Player("Ipsum", building);
         player3.setCurrentRoom(0);
     }
 
@@ -30,6 +30,7 @@ class PlayerTest {
     public void testGetName() {
         assertEquals("Adam", player.getName());
     }
+
 
     @Test
     public void testMoveForward() {
@@ -58,9 +59,12 @@ class PlayerTest {
 
         player.backpack.add(mockItem); //addar "Mocked sword" till förta platsen i ryggsäcken
         player.backpack.add(mockItem2);
+        mockItem.use();
 
         assertEquals("Mocked sword", player.backpack.get(0).getName());
         assertEquals("Mocked shield", player.backpack.get(1).getName());
+        verify(mockItem).use();
+
     }
 
     @Test

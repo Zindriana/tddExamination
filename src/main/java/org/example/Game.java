@@ -3,14 +3,17 @@ package org.example;
 import java.util.Scanner;
 
 public class Game {
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     private Player player;
     private final Item[] items = new Item[10]; //change this value later when we now how many different items exist in the game
     private final NPC[] npcs = new NPC[4]; //change this value when we know how many npc we need
     private final Building building = new Building();
 
     public Game() {
-
+        items[0] = new Item("Die");
+        items[1] = new Item("Candle");
+        items[2] = new Item("Key");
+        npcs[0] = new NPC("Hooded figure");
     }
 
     public void startGame(){
@@ -20,7 +23,7 @@ public class Game {
             System.out.println("The name cannot be empty, please choose a name");
             name = sc.nextLine().trim();
         }
-        player = new Player(name);
+        player = new Player(name, building);
         player.setCurrentRoom(0);
         System.out.println("Hello " + getPlayer().getName() + ". Welcome to my dungeon. To get out you need to solve my puzzles!");
     }
@@ -40,6 +43,10 @@ public class Game {
              return npc;
         }
         return null;
+    }
+
+    public Room getRoom(int roomNumber) {
+        return building.getRoom(roomNumber);
     }
 
     public Player getPlayer() {
