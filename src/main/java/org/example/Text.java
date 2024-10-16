@@ -48,6 +48,8 @@ public class Text {
                 return "A golden key";
             case "magicWand":
                 return "A wand imbued with magical powers.";
+            case "Sword":
+                return "A sharp, shiny sword.";
             default:
                 return null;
         }
