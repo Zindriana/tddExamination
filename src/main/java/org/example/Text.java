@@ -26,18 +26,24 @@ public class Text {
                 return null;
         }
     }
+package org.example;
 
-   //items
-    public String getItemDescription(String itemName){
-        switch(itemName){
-            case "Die":
-                return "A bright white six-sided die.";
-            case "Placeholder item 2":
-                return " place holder for item 2 description";
+public class Text {
+
+    public String getItemDescription(String itemName) {
+        switch (itemName) {
+            case "Sword":
+                return "A sharp, shiny sword."; // Description for the Sword
+            case "Shield":
+                return "A sturdy wooden shield."; // Description for the Shield
+            // Add other items and their descriptions here
             default:
-                return null;
+                return null; // Return null for unknown items
         }
     }
+}
+
+   
 
     //npc
     public String getNpcDescription(String roomName){
