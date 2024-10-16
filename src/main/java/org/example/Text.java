@@ -29,14 +29,13 @@ public class Text {
 
 
   //items
-    public String getItemDescription(String itemName){
-        switch(itemName){
-            case "Die":
-                return "A bright white six-sided die.";
-            case "Placeholder item 2":
-                return " place holder for item 2 description";
+    ppublic String getItemDescription(String key) {
+        switch (key) {
+            case "magicWand":
+                return "A wand imbued with magical powers.";
+            // Add more cases as needed for other items
             default:
-                return null;
+                return null; // or return a default description
         }
     }
    
