@@ -3,7 +3,7 @@ package org.example;
 import java.util.Scanner;
 
 public class Game {
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     private Player player;
     private final Item[] items = new Item[10]; //change this value later when we now how many different items exist in the game
     private final NPC[] npcs = new NPC[4]; //change this value when we know how many npc we need

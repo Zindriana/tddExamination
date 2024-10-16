@@ -9,6 +9,10 @@ public class Text {
                 return "You return to the starting room";
             case "Middle room":
                 return "You enter a dark cavern";
+            case "Third room":
+                return " place holder third room";
+            case "Last room":
+                return " place holder last room";
             default:
                 return null;
         }
@@ -22,6 +26,10 @@ public class Text {
                         " You also see a " + getNpcDescription("hooded figure") +  " standing next to a large wooden door. It seems like the door is the only way out of here. ";
             case "Middle room":
                 return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet";
+            case "Third room":
+                return " place holder third room";
+            case "Last room":
+                return " place holder last room";
             default:
                 return null;
         }
@@ -33,8 +41,10 @@ public class Text {
         switch(itemName){
             case "Die":
                 return "A bright white six-sided die.";
-            case "Placeholder item 2":
-                return " place holder for item 2 description";
+            case "Candle":
+                return "A thick white candle. It has been used sometime before.";
+            case "Key" :
+                return "A golden key";
             default:
                 return null;
         }
@@ -45,7 +55,7 @@ public class Text {
         switch(npcName){
             case "hooded figure":
                 return "mysterious hooded figure";
-            case "Middle room":
+            case "Another npc":
                 return " place holder for npc description in room 2";
             default:
                 return null;
