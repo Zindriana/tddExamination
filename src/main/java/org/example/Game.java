@@ -42,6 +42,10 @@ public class Game {
         return null;
     }
 
+    public Room getRoom(int roomNumber) {
+        return building.getRoom(roomNumber);
+    }
+
     public Player getPlayer() {
         return player;
     }
