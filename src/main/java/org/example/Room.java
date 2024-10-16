@@ -15,13 +15,11 @@ public class Room {
     private final Text output = new Text();
 
     //constructors
-    public Room(int roomNumber, String name, NPC npcInRoom)  {
+    public Room(int roomNumber, String name)  {
         this.roomNumber = roomNumber;
         this.name = name;
         this.descriptionWhenEnteringRoom = output.getRoomDescriptionWhenEnter(name);
         this.descriptionOnInvestigateRoom = output.getRoomDescriptionWhenInvestigate(name);
-        this.npcInRoom = npcInRoom;
-
     }
 
     //getters

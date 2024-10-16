@@ -16,7 +16,7 @@ class RoomTest {
     @Test
     void testGetRoomNumber() {
         //given
-        Room room = new Room(1, "Test Room", npc);
+        Room room = new Room(1, "Test Room");
 
         //when
         int expectedRoomNumber = room.getRoomNumber();
@@ -28,7 +28,7 @@ class RoomTest {
     @Test
     void testGetRoomName() {
         //given
-        Room room = new Room(2,"Test Room",  npc);
+        Room room = new Room(2,"Test Room");
 
         //when
         String expectedRoomName = room.getName();
@@ -40,7 +40,7 @@ class RoomTest {
     @Test
     void testGetRoomDescription() {
         //given
-        Room room = new Room(1, "Middle room",  npc);
+        Room room = new Room(1, "Middle room");
         //when
         String expectedEnteringRoomDescription = room.getDescriptionWhenEnteringRoom();
 
@@ -51,7 +51,7 @@ class RoomTest {
     @Test
     void testGetDescriptionOnInvestigateRoom() {
         //given
-        Room room = new Room(1, "Middle room",  npc);
+        Room room = new Room(1, "Middle room");
 
         //when
         String expectedDescriptionOfInvestigate = room.getDescriptionOnInvestigateRoom();
@@ -64,7 +64,7 @@ class RoomTest {
     @Test
     void testGetListOfItems() {
         //given
-        Room room = new Room(1, "Test Room",  npc);
+        Room room = new Room(1, "Test Room");
 
         Item item1 = mock(Item.class);
         Item item2 = mock(Item.class);
@@ -93,7 +93,7 @@ class RoomTest {
     @Test
     void testInvestigateNPCInRoom() {
         //given
-        Room room = new Room(1, "Test Room",  npc);
+        Room room = new Room(1, "Test Room");
 
         NPC npc1 = mock(NPC.class);
         room.setNpcInRoom(npc1);
@@ -110,7 +110,7 @@ class RoomTest {
     @Test
     void testGetNpcInRoom() {
         //given
-        Room room = new Room(1, "Test Room", npc);
+        Room room = new Room(1, "Test Room");
 
         NPC npc2 = mock(NPC.class);
         room.setNpcInRoom(npc2);
@@ -129,7 +129,7 @@ class RoomTest {
     void testStartingRoom(){
         //given
         NPC npc = mock(NPC.class);
-        Room room = new Room(0, "Starting room", npc);
+        Room room = new Room(0, "Starting room");
 
         //when &
         assertEquals("You return to the starting room", room.getDescriptionWhenEnteringRoom());
@@ -144,7 +144,7 @@ class RoomTest {
     @Test
     void testInvestigatingRoom(){
         //given
-        Room room = new Room(0,"Starting room", npc);
+        Room room = new Room(0,"Starting room");
         Item item = mock(Item.class);
         Item item2 = mock(Item.class);
 
@@ -179,7 +179,7 @@ class RoomTest {
     @Test
     void testRoomInvestigation() {
         //given
-        Room room = new Room(0,"Starting room", npc);
+        Room room = new Room(0,"Starting room");
         Item item = new Item("Candle","A thick white candle. It has been used sometime before.");
         room.itemsInRoom.add(item);
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
