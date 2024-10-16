@@ -15,11 +15,11 @@ public class Room {
     private final Text output = new Text();
 
     //constructors
-    public Room(int roomNumber, String name, String descriptionWhenEnteringRoom, String descriptionOnInvestigateRoom, NPC npcInRoom)  {
+    public Room(int roomNumber, String name, NPC npcInRoom)  {
         this.roomNumber = roomNumber;
         this.name = name;
-        this.descriptionWhenEnteringRoom = output.getRoomDescriptionWhenEnter(descriptionWhenEnteringRoom);
-        this.descriptionOnInvestigateRoom = output.getRoomDescriptionWhenInvestigate(descriptionOnInvestigateRoom);
+        this.descriptionWhenEnteringRoom = output.getRoomDescriptionWhenEnter(name);
+        this.descriptionOnInvestigateRoom = output.getRoomDescriptionWhenInvestigate(name);
         this.npcInRoom = npcInRoom;
 
     }
@@ -64,7 +64,14 @@ public class Room {
         return itemsInRoom;
     }
 
+    //Entering Room
+    public void enterRoom() {
+
+    }
+
     // TODO:investigate Room, descriptions of room, all items and NPC
+    public void investigateRoom() {
+    }
 
 
 }

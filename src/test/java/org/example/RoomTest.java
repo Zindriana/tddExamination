@@ -15,7 +15,7 @@ class RoomTest {
     @Test
     void testGetRoomNumber() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
+        Room room = new Room(1, "Test Room", npc);
 
         //when
         int expectedRoomNumber = room.getRoomNumber();
@@ -27,7 +27,7 @@ class RoomTest {
     @Test
     void testGetRoomName() {
         //given
-        Room room = new Room(2,"Test Room", "This is a test room", "Test description of investigate", npc);
+        Room room = new Room(2,"Test Room",  npc);
 
         //when
         String expectedRoomName = room.getName();
@@ -39,7 +39,7 @@ class RoomTest {
     @Test
     void testGetRoomDescription() {
         //given
-        Room room = new Room(1, "Middle room", "Middle room", "Middle room", npc);
+        Room room = new Room(1, "Middle room",  npc);
         //when
         String expectedEnteringRoomDescription = room.getDescriptionWhenEnteringRoom();
 
@@ -50,7 +50,7 @@ class RoomTest {
     @Test
     void testGetDescriptionOnInvestigateRoom() {
         //given
-        Room room = new Room(1, "Middle room", "Middle room", "Middle room", npc);
+        Room room = new Room(1, "Middle room",  npc);
 
         //when
         String expectedDescriptionOfInvestigate = room.getDescriptionOnInvestigateRoom();
@@ -63,7 +63,7 @@ class RoomTest {
     @Test
     void testGetListOfItems() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
+        Room room = new Room(1, "Test Room",  npc);
 
         Item item1 = mock(Item.class);
         Item item2 = mock(Item.class);
@@ -92,7 +92,7 @@ class RoomTest {
     @Test
     void testInvestigateNPCInRoom() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
+        Room room = new Room(1, "Test Room",  npc);
 
         NPC npc1 = mock(NPC.class);
         room.setNpcInRoom(npc1);
@@ -109,7 +109,7 @@ class RoomTest {
     @Test
     void testGetNpcInRoom() {
         //given
-        Room room = new Room(1, "Test Room", "This is a test room", "Test description of investigate", npc);
+        Room room = new Room(1, "Test Room", npc);
 
         NPC npc2 = mock(NPC.class);
         room.setNpcInRoom(npc2);
@@ -128,8 +128,7 @@ class RoomTest {
     void testStartingRoom(){
         //given
         NPC npc = mock(NPC.class);
-        Room room = new Room(0, "Starting room",
-                "Starting room", "Starting room", npc);
+        Room room = new Room(0, "Starting room", npc);
 
         //when &
         assertEquals("You return to the starting room", room.getDescriptionWhenEnteringRoom());
@@ -139,6 +138,71 @@ class RoomTest {
                 room.getDescriptionOnInvestigateRoom());
 
     }
+
+
+    @Test
+    void testInvestigatingRoom(){
+        //given
+        Room room = new Room(0,"Starting room", npc);
+        Item item = mock(Item.class);
+        Item item2 = mock(Item.class);
+
+
+        NPC npc = mock(NPC.class);
+
+        //when
+        when(item.getName()).thenReturn("Table");
+        when(item.getDescription()).thenReturn("Round big table for a viking party");
+        when(item2.getName()).thenReturn("Chair");
+        when(item2.getDescription()).thenReturn("This chair is design in stone by Rangnaroke");
+
+        when(npc.getName()).thenReturn("Rangnaroke");
+        when(npc.getDescription()).thenReturn("A wise and powerful viking warrior");
+
+        room.itemsInRoom.add(item);
+        room.itemsInRoom.add(item2);
+
+        room.setNpcInRoom(npc);
+
+        //then
+        assertEquals("Starting room", room.getName());
+        assertEquals("Rangnaroke", npc.getName());
+        assertEquals("A wise and powerful viking warrior", npc.getDescription());
+        assertEquals("Round big table for a viking party", item.getDescription());
+        assertEquals("Table", item.getName());
+        assertEquals("Chair", item2.getName());
+        assertEquals("This chair is design in stone by Rangnaroke", item2.getDescription());
+
+
+
+
+
+    }
+
+    @Test
+    void testRoomInvestigation() {
+        //given
+        Room room = new Room(0,"Starting room", npc);
+        NPC npc = mock(NPC.class);
+        Item item = new Item("shoes","teereng");
+
+
+
+
+        //when
+        when(npc.getName()).thenReturn("Flash");
+        when(npc.getDescription()).thenReturn("A fast light");
+
+
+
+        room.itemsInRoom.add(item);
+        room.setNpcInRoom(npc);
+
+        String roomDescription = room.
+
+        //then
+    }
+
 
 
 }
