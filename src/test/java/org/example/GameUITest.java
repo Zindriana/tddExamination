@@ -12,7 +12,7 @@ class GameUITest {
     private GameUI gameUI;
     private Room room;
     private NPC npc;
-    private Building building;
+    private final Building building = new Building();
 
     @BeforeEach
     void setUp() {
