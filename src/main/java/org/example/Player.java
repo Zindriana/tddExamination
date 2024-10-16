@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class Player {
 
-    private String name;
+    private final String name;
     private int currentRoom;
     public List<Item> backpack = new ArrayList<Item>();
-    private Building building;
+    private final Building building;
 
 
     public Player(String name, Building building) {
@@ -17,17 +17,23 @@ public class Player {
         this.building = building;
     }
 
+    public Room getRoom() {
+        return building.getRoom(getCurrentRoom());
+    }
+
     public void moveForward(){
         if(currentRoom == building.getNumberOfRooms() -1){
             throw new IllegalStateException("You cant move forward, room " + currentRoom + " is the last room\n");
         }
         currentRoom++;
+        System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
     }
     public void moveBack(){
         if(currentRoom == 0){
             throw new IllegalStateException("You cant move back, room 0 is the first room\n");
         }
         currentRoom--;
+        System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
     }
     public void checkBackpack() {
         if (backpack.isEmpty()) {
