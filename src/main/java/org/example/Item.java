@@ -8,9 +8,9 @@ public class Item {
     private final Text output = new Text();
 
     // Constructor for creating an Item object, now fetching description from Text class
-    public Item(String name, String descriptionKey) {
+    public Item(String name) {
         this.name = name;
-        this.description = output.getItemDescription(descriptionKey); // Fetch description using key
+        this.description = output.getItemDescription(name); // Use name for fetching description
     }
 
     // Method to pick up the item
