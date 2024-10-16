@@ -2,16 +2,19 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Player {
 
     private String name;
     private int currentRoom;
     public List<Item> backpack = new ArrayList<Item>();
-    Building building = new Building();
+    private Building building;
 
-    public Player(String name){
+
+    public Player(String name, Building building) {
         this.name = name;
+        this.building = building;
     }
 
     public void moveForward(){
@@ -26,12 +29,21 @@ public class Player {
         }
         currentRoom--;
     }
-    public void checkBackpack(){
-        if(backpack.isEmpty()){
+    public void checkBackpack() {
+        if (backpack.isEmpty()) {
             throw new IllegalStateException("There are no items in the backpack\n");
         }
-        for(Item item : backpack){
-            System.out.println("The items in your backpack is: \n" + item + "\n");
+        System.out.println("The items in your backpack is: ");
+        for (int i = 0; i < backpack.size(); i++) {
+            System.out.println((i) + ". " + backpack.get(i).getName());
+        }
+        System.out.println("Do you want to use an item? (y/n)");
+        Scanner sc = new Scanner(System.in);
+        String choice = sc.nextLine();
+        if (choice.equals("y")) {
+            System.out.println("Chose the item you want to use with index nr");
+            int choice2 = sc.nextInt();
+            backpack.get(choice2).use();
         }
     }
 
