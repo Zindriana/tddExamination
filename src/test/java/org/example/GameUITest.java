@@ -23,8 +23,8 @@ class GameUITest {
 
     @Test
     void testRoomOption() {
-        //simulerar att användaren väljer val 1 för att flytta fram och 4 för att avsluta
-        String input = "1\n4\n";
+        //simulerar att användaren väljer val 1 för att flytta fram och 6 för att avsluta
+        String input = "1\n5\n";
         ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 

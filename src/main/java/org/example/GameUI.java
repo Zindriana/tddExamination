@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class GameUI {
 
     private Player player;
-    //private Room room;
+    private Room room;
 
     public void roomOption(Player player) {
 
@@ -17,7 +17,8 @@ public class GameUI {
          System.out.println("1. Move forward");
          System.out.println("2. Move backward");
          System.out.println("3. Check backpack");
-         System.out.println("4. Exit");
+         System.out.println("4. Investigate room");
+         System.out.println("5. Exit");
 
          int choice = sc.nextInt();
 
@@ -49,8 +50,11 @@ public class GameUI {
                  break;
 
              case 4:
-                 on = false;
+                 room.investigateRoom();
+                 break;
 
+             case 5:
+                 on = false;
          }
         }
     }
