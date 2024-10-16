@@ -9,7 +9,7 @@ public class ItemTest {
     public void testItemCreationWithDescription() {
         // Given: A known description key
         String itemName = "Magic Wand";
-        String descriptionKey = "magicWand"; // This should match the key used in your Text class
+        String descriptionKey = "magicWand"; 
 
         // When: An item is created
         Item item = new Item(itemName, descriptionKey);
