@@ -4,8 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class PlayerTest {
 
@@ -58,9 +57,12 @@ class PlayerTest {
 
         player.backpack.add(mockItem); //addar "Mocked sword" till förta platsen i ryggsäcken
         player.backpack.add(mockItem2);
+        mockItem.use();
 
         assertEquals("Mocked sword", player.backpack.get(0).getName());
         assertEquals("Mocked shield", player.backpack.get(1).getName());
+        verify(mockItem).use();
+
     }
 
     @Test
