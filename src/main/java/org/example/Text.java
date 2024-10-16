@@ -2,7 +2,7 @@ package org.example;
 
 public class Text {
 
-    //room
+    //rooms
     public String getRoomDescriptionWhenEnter(String roomName){
         switch(roomName){
             case "Starting room":
@@ -18,8 +18,8 @@ public class Text {
         switch(roomName){
             case "Starting room":
                 return " The room is barely lit by a few candles and you feel a light breeze. " +
-                        "You see something bright and small on the dark stone floor. It is " + getItemDie() +
-                        " You also see a " + getNpcDescriptionWhenInvestigate("Starting room") +  " standing next to a large wooden door. It seems like the door is the only way out of here. ";
+                        "You see something bright and small on the dark stone floor. It is " + getItemDescription("Die") +
+                        " You also see a " + getNpcDescription("Starting room") +  " standing next to a large wooden door. It seems like the door is the only way out of here. ";
             case "Middle room":
                 return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet";
             default:
@@ -29,19 +29,19 @@ public class Text {
 
 
     //items
-    public String getItemDie(){
-        return "A bright white six-sided die.";
+    public String getItemDescription(String itemName){
+        switch(itemName){
+            case "Die":
+                return "A bright white six-sided die.";
+            case "Placeholder item 2":
+                return " place holder for item 2 description";
+            default:
+                return null;
+        }
     }
 
     //npc
-    public String getNpcHoodedFigure(){
-        return "";
-    }
-//    public String get(){
-//        return ;
-//    }
-
-    public String getNpcDescriptionWhenInvestigate(String roomName){
+    public String getNpcDescription(String roomName){
         switch(roomName){
             case "Starting room":
                 return "hooded figure";
