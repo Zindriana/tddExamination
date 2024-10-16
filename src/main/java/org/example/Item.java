@@ -1,5 +1,5 @@
 package org.example;
-
+import org.example.Text;
 public class Item {
 
     // Attributes for item name and description
