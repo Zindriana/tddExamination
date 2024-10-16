@@ -71,7 +71,7 @@ public class Room {
 
     public void investigateRoom() {
         System.out.println(getDescriptionOnInvestigateRoom());
-        System.out.println(getNpcInRoom().getDescription());
+        System.out.println("Items in the room: ");
         getListOfItems();
     }
 

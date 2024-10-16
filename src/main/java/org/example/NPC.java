@@ -9,13 +9,11 @@ public class NPC {
     private Puzzles puzzle;
     private String name;
     private String description;
+    private final Text output = new Text();
 
-    public NPC() {
-    }
-
-    public NPC(String name, String description) {
+    public NPC(String name) {
         this.name = name;
-        this.description = description;
+        this.description = output.getNpcDescription(name);
     }
 
     public String getName() {
@@ -49,7 +47,7 @@ public class NPC {
                 System.out.println("You are about to play puzzle " + p.getDescription());
                 p.solve();
             }
-            case 2 -> System.out.println(Text.getRoomHints(room.getName()));
+            case 2 -> System.out.println(output.getRoomHints(room.getName()));
         }
     }
 }
