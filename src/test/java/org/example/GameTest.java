@@ -71,4 +71,11 @@ class GameTest {
         assertNull(game.getNPC("The Butler"));
     }
 
+    @Test
+    void getRoomTest(){
+        Game game = new Game();
+        String expectedRoom = game.getRoom(0).getName();
+
+        assertEquals("Starting room", expectedRoom);
+    }
 }

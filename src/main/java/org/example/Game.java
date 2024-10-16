@@ -10,7 +10,10 @@ public class Game {
     private final Building building = new Building();
 
     public Game() {
-
+        items[0] = new Item("Die", "A bright white six-sided die.");
+        items[1] = new Item("Candle", "A thick white candle. It has been used sometime before.");
+        items[2] = new Item("Key", "A golden key.");
+        npcs[0] = new NPC("Hooded figure");
     }
 
     public void startGame(){
