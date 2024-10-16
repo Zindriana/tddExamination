@@ -1,36 +1,36 @@
 package org.example;
-
+import org.example.Text;
 public class Item {
- 
-    // Attribut för namn och beskrivning av föremålet
+
+    // Attributes for item name and description
     private String name;
     private String description;
+    private final Text output = new Text();
 
-    // Konstruktor för att skapa ett Item-objekt
-    public Item(String name, String description) {
+    // Constructor for creating an Item object, now fetching description from Text class
+    public Item(String name) {
         this.name = name;
-        this.description = description;
+        this.description = output.getItemDescription(name); // Use name for fetching description
     }
 
-    // Metod för att plocka upp föremålet
+    // Method to pick up the item
     public void pickUp() {
         System.out.println("You have picked up: " + name);
-        // Lägg till logik för att lägga föremålet i spelarens inventarie
+        // Logic for adding the item to the player's inventory
     }
 
-    // Metod för att använda föremålet
+    // Method to use the item
     public void use() {
         System.out.println("You have used the " + name);
-        // Lägg till logik för vad som händer när föremålet används
+        // Logic for what happens when the item is used
     }
 
-    // Metod för att undersöka föremålet
+    // Method to investigate the item
     public void investigateItem() {
         System.out.println("You investigate the " + name + ". " + description);
     }
 
-    // Getters för name och description
-
+    // Getters for name and description
     public String getName() {
         return name;
     }
@@ -39,7 +39,7 @@ public class Item {
         return description;
     }
 
-    // Setters för name och description
+    // Setters for name and description
     public void setName(String name) {
         this.name = name;
     }
