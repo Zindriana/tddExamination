@@ -52,16 +52,16 @@ public class Room {
     }
 
 
-
-
     // gets a list of all items in the room
-    public List<Item> getListOfItems() {
+    public void getListOfItems() {
         // controls if there are items in the room
-        if (itemsInRoom == null) {
+        if (itemsInRoom.isEmpty()) {
             System.out.println("There are no items in this room.");
-            return null;
+        } else {
+            for (Item item : itemsInRoom) {
+                System.out.println(item.getName());
+            }
         }
-        return itemsInRoom;
     }
 
     //Entering Room
@@ -69,9 +69,10 @@ public class Room {
 
     }
 
-    // TODO:investigate Room, descriptions of room, all items and NPC
     public void investigateRoom() {
+        System.out.println(getDescriptionOnInvestigateRoom());
+        System.out.println(getNpcInRoom().getDescription());
+        getListOfItems();
     }
-
 
 }

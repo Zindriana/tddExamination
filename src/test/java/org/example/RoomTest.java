@@ -2,6 +2,9 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -85,7 +88,7 @@ class RoomTest {
         assertEquals("Key", room.itemsInRoom.get(0).getName());
         assertEquals("Locked Door", room.itemsInRoom.get(1).getName());
         assertEquals("Bucket", room.itemsInRoom.get(2).getName());
-        assertEquals(3, room.getListOfItems().size());
+        assertEquals(3, room.itemsInRoom.size());
 
     }
 
@@ -184,23 +187,23 @@ class RoomTest {
         //given
         Room room = new Room(0,"Starting room", npc);
         NPC npc = mock(NPC.class);
-        Item item = new Item("shoes","teereng");
-
-
-
+        Item item = new Item("Candle","A thick white candle. It has been used sometime before.");
+        room.itemsInRoom.add(item);
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        room.investigateRoom();
 
         //when
-        when(npc.getName()).thenReturn("Flash");
-        when(npc.getDescription()).thenReturn("A fast light");
-
-
+        when(npc.getName()).thenReturn("Rangnaroke");
+        when(npc.getDescription()).thenReturn("A wise and powerful viking warrior");
 
         room.itemsInRoom.add(item);
         room.setNpcInRoom(npc);
 
-        String roomDescription = room.
-
         //then
+        assertEquals(" The room is barely lit by a few candles and you feel a light breeze. " +
+                "You see something bright and small on the dark stone floor. It is A bright white six-sided die." +
+                " You also see a hooded figure standing next to a large wooden door. It seems like the door is the only way out of here. A wise and powerful viking warrior. A thick white candle. It has been used sometime before.", outContent.toString());
     }
 
 
