@@ -28,13 +28,13 @@ public class Text {
     }
 
     // Items
-    public String getItemDescription(String key) {  // Removed the extra 'p'
+   public String getItemDescription(String key) {
         switch (key) {
             case "magicWand":
                 return "A wand imbued with magical powers.";
-            // Add more cases as needed for other items
+            // You can add more cases for other item descriptions here
             default:
-                return null; // or return a default description
+                return null; // Return null for unknown keys
         }
     }
 
