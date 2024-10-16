@@ -27,8 +27,7 @@ public class Text {
         }
     }
 
-
-    //items
+   //items
     public String getItemDescription(String itemName){
         switch(itemName){
             case "Die":
