@@ -18,7 +18,7 @@ class GameUITest {
         player = new Player("Adam");
         player.setCurrentRoom(1);
         gameUI = new GameUI();
-        room = new Room(1, "test", "test", "test", npc);
+        room = new Room(1, "test", npc);
     }
 
     @Test
