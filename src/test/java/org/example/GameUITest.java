@@ -11,7 +11,6 @@ class GameUITest {
     private Player player;
     private GameUI gameUI;
     private Room room;
-    private NPC npc;
     private final Building building = new Building();
 
     @BeforeEach
