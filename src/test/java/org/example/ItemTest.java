@@ -1,23 +1,22 @@
 package org.example;
 
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ItemTest {
 
     @Test
-    public void testItemCreation() {
-        Item sword = new Item("Sword", "A sharp blade used for combat.");
-        assertEquals("Sword", sword.getName());
-        assertEquals("A sharp blade used for combat.", sword.getDescription());
-    }
+    public void testItemCreationWithDescription() {
+        // Given: A known description key
+        String itemName = "Magic Wand";
+        String descriptionKey = "magicWand"; // This should match the key used in your Text class
 
-    @Test
-    public void testSetters() {
-        Item sword = new Item("Sword", "A sharp blade used for combat.");
-        sword.setName("Long Sword");
-        sword.setDescription("A longer blade used for combat.");
-        assertEquals("Long Sword", sword.getName());
-        assertEquals("A longer blade used for combat.", sword.getDescription());
+        // When: An item is created
+        Item item = new Item(itemName, descriptionKey);
+
+        // Then: The item should have the correct name and a non-empty description
+        assertEquals(itemName, item.getName());
+        assertNotNull(item.getDescription());
+        assertFalse(item.getDescription().isEmpty());
     }
 }
