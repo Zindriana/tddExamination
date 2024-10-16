@@ -26,9 +26,7 @@ public class Text {
                 return null;
         }
     }
-package org.example;
 
-public class Text {
 
     public String getItemDescription(String itemName) {
         switch (itemName) {
@@ -41,7 +39,7 @@ public class Text {
                 return null; // Return null for unknown items
         }
     }
-}
+
 
    
 
