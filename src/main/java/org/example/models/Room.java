@@ -57,14 +57,6 @@ public class Room {
         }
         return null;
     }
-
-    //setters
-    public void setNpcInRoom(NPC npcInRoom) {
-        this.npcInRoom = npcInRoom;
-
-    }
-
-
     // gets a list of all items in the room
     public void getListOfItems() {
         // controls if there are items in the room
@@ -76,6 +68,15 @@ public class Room {
             }
         }
     }
+    
+    //setters
+    public void setNpcInRoom(NPC npcInRoom) {
+        this.npcInRoom = npcInRoom;
+
+    }
+
+
+
 
     //get a list of all objects in the room
     public void getListOfObjects() {
