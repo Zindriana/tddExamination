@@ -1,38 +1,32 @@
-package org.example;
-
-import org.junit.jupiter.api.Test;  // Se till att importera JUnit 5
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ItemTest {
 
     @Test
-    public void testPickUp() {
+    public void testValidItemCreation() {
         Item sword = new Item("Sword");
-        sword.pickUp();
         assertEquals("Sword", sword.getName());
+        assertEquals("A sharp, shiny sword.", sword.getDescription());
     }
 
     @Test
-    public void testUse() {
-        Item shield = new Item("Shield");
-        shield.use();
-        assertEquals("Shield", shield.getName());
+    public void testInvalidItemName() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Item("");
+        });
+        assertEquals("Item name cannot be null or empty.", exception.getMessage());
     }
 
     @Test
     public void testInvestigateItem() {
-        Item sword = new Item("Sword");
-        String expectedDescription = "A sharp, shiny sword.";  // Justera efter Text-klassen
-        assertEquals(expectedDescription, sword.getDescription());
-        sword.investigateItem();
+        Item shield = new Item("Shield");
+        assertEquals("A sturdy, protective shield.", shield.getDescription());
     }
 
     @Test
-    public void testSettersAndGetters() {
-        Item sword = new Item("Sword");
-        sword.setName("Magic Sword");
-        sword.setDescription("A magical sword with glowing runes.");
-        assertEquals("Magic Sword", sword.getName());
-        assertEquals("A magical sword with glowing runes.", sword.getDescription());
+    public void testUnknownItemDescription() {
+        Item unknownItem = new Item("UnknownItem");
+        assertEquals("Description not found for the item: UnknownItem", unknownItem.getDescription());
     }
 }
