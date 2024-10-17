@@ -9,6 +9,9 @@ public class Item {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Item name cannot be null or empty.");
         }
+        if (text == null) {
+            throw new IllegalArgumentException("Text instance cannot be null.");
+        }
         this.name = name;
         this.description = text.getItemDescription(name);
     }
