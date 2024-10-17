@@ -1,10 +1,11 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ItemTest {
-    
+
     private Text mockText() {
         return new Text() {
             @Override
@@ -14,6 +15,8 @@ public class ItemTest {
                         return "A sharp, shiny sword.";
                     case "Shield":
                         return "A sturdy, protective shield.";
+                    case "Die":
+                        return "A bright white six-sided die.";
                     default:
                         return "Description not found for the item: " + name;
                 }
@@ -34,6 +37,14 @@ public class ItemTest {
             new Item("", mockText());
         });
         assertEquals("Item name cannot be null or empty.", exception.getMessage());
+    }
+
+    @Test
+    public void testNullTextInstance() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Item("Sword", null);
+        });
+        assertEquals("Text instance cannot be null.", exception.getMessage());
     }
 
     @Test
