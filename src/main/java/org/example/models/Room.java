@@ -68,7 +68,7 @@ public class Room {
             }
         }
     }
-    
+
     //setters
     public void setNpcInRoom(NPC npcInRoom) {
         this.npcInRoom = npcInRoom;

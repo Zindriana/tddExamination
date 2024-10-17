@@ -34,10 +34,11 @@ public class Game {
         getRoom(player.getCurrentRoom()).investigateRoom();
 
         System.out.println("What do you want to do?");
-        System.out.println("1.Pick up an item\n2.Use an item\n3.Interact with the npc\n4.Nothing");
+        System.out.println("1.Pick up an item\n2. Interact with room object\n3.Interact with the npc\n4.Nothing");
         Scanner sc = new Scanner(System.in);
         String choice = sc.nextLine().trim();
         switch (choice) {
+            // Pick an item
             case "1":
                 System.out.println("Enter the index of the item: ");
                 int itemIndex = sc.nextInt();
@@ -47,15 +48,18 @@ public class Game {
                     System.out.println("You must choose another index");
                 }
                 break;
+                // TODO:interact with room object
             case "2":
-                System.out.println("Enter the index of the item: ");
+                System.out.println("Enter the index of the object: ");
                 int itemIndex2 = sc.nextInt();
                 try {
-                    getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex2).use();
+                    getRoom(player.getCurrentRoom()).get.get(itemIndex2).use();
+
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("You must choose another index");
                 }
                 break;
+                // interact with NPC
             case "3":
                 if(getRoom(player.getCurrentRoom()).getNpcInRoom() != null){
                     getRoom(player.getCurrentRoom()).getNpcInRoom().interact(getPlayer(), getRoom(getPlayer().getCurrentRoom()));
@@ -69,9 +73,13 @@ public class Game {
         }
     }
 
-    public Item getItem(String itemName) {return items.getItem(itemName);}
+    public Item getItem(String itemName) {
+        return items.getItem(itemName);
+    }
 
-    public NPC getNPC(String npcName) {return npcs.getNPC(npcName);}
+    public NPC getNPC(String npcName) {
+        return npcs.getNPC(npcName);
+    }
 
     public Room getRoom(int roomNumber) {
         return building.getRoom(roomNumber);
