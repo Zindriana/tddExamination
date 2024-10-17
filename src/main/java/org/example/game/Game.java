@@ -41,15 +41,27 @@ public class Game {
             case "1":
                 System.out.println("Enter the index of the item: ");
                 int itemIndex = sc.nextInt();
-                getPlayer().backpack.add(getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex));
+                try {
+                    getPlayer().backpack.add(getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex));
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("You must choose another index");
+                }
                 break;
             case "2":
                 System.out.println("Enter the index of the item: ");
                 int itemIndex2 = sc.nextInt();
-                getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex2).use();
+                try {
+                    getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex2).use();
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("You must choose another index");
+                }
                 break;
             case "3":
-                getRoom(player.getCurrentRoom()).getNpcInRoom().interact(getPlayer(), getRoom(getPlayer().getCurrentRoom()));
+                if(getRoom(player.getCurrentRoom()).getNpcInRoom() != null){
+                    getRoom(player.getCurrentRoom()).getNpcInRoom().interact(getPlayer(), getRoom(getPlayer().getCurrentRoom()));
+                } else {
+                    System.out.println("There is no one else in the room. That you know about at least... \n");
+                }
                 break;
             default:
                 break;
