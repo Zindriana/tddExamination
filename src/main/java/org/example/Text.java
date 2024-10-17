@@ -11,7 +11,7 @@ public class Text {
         // Initializing item descriptions
         itemDescriptions = new HashMap<>();
         itemDescriptions.put("Die", "A bright white six-sided die.");
-        itemDescriptions.put("magicWand", "A wand imbued with magical powers.");
+        itemDescriptions.put("Magic Wand", "A wand imbued with magical powers.");
         itemDescriptions.put("Sword", "A sharp, shiny sword.");
         // Add more items as needed
     }
@@ -23,39 +23,46 @@ public class Text {
                 return "You return to the starting room.";
             case "Middle room":
                 return "You enter a dark cavern.";
+            case "Third room":
+                return "You step into a mysterious chamber filled with echoes.";
             default:
-                return null;
+                return "This room does not exist.";
         }
     }
 
     public String getRoomDescriptionWhenInvestigate(String roomName) {
         switch (roomName) {
             case "Starting room":
-                return "The room is barely lit by a few candles and you feel a light breeze. " +
-                       "You see something bright and small on the dark stone floor. It is " + 
+                return "The room is barely lit by a few candles. You feel a light breeze. " +
+                       "You see something bright and small on the dark stone floor: " + 
                        getItemDescription("Die") + 
-                       ". You also see a " + getNpcDescription("Starting room") + 
-                       " standing next to a large wooden door. It seems like the door is the only way out of here.";
+                       ". A hooded figure stands next to a large wooden door, " +
+                       "which seems to be the only way out.";
             case "Middle room":
-                return "You hear droplets drop on the cavern ground and the stones feel cold against your bare feet.";
+                return "You hear droplets falling onto the cavern floor. The stones feel cold against your bare feet.";
+            case "Third room":
+                return "The walls of the chamber are adorned with ancient symbols, and you sense a presence watching you.";
             default:
-                return null;
+                return "You can't investigate that room.";
         }
     }
 
+    // Get item description
     public String getItemDescription(String itemName) {
-        return itemDescriptions.getOrDefault(itemName, null);
+        return itemDescriptions.getOrDefault(itemName, "Description not found for the item: " + itemName);
     }
 
     // NPC descriptions
     public String getNpcDescription(String roomName) {
         switch (roomName) {
             case "Starting room":
-                return "hooded figure";
+                return "A hooded figure watches you closely.";
             case "Middle room":
-                return "placeholder for NPC description in room 2";
+                return "A shadowy silhouette looms in the darkness.";
+            case "Third room":
+                return "An ancient spirit whispers secrets to the air.";
             default:
-                return null;
+                return "No NPC in this room.";
         }
     }
 
@@ -63,15 +70,15 @@ public class Text {
     public static String getRoomHints(String roomName) {
         switch (roomName) {
             case "Starting room":
-                return "this is a placeholder for the hint in room 1.";
+                return "Look carefully at your surroundings.";
             case "Middle room":
-                return "this is a placeholder for the hint in room 2.";
+                return "The sound may lead you to a hidden path.";
             case "Third room":
-                return "this is a placeholder for the hint in room 3.";
+                return "The symbols may hold the key to your next move.";
             case "Last room":
-                return "this is a placeholder for the hint in room 4.";
+                return "Trust your instincts.";
             default:
-                return null;
+                return "No hints available for this room.";
         }
     }
 }
