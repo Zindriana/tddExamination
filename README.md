@@ -1,4 +1,4 @@
-   ![CI status](https://github.com/zindriana/tddExamination/actions/workflows/main.yml/badge.svg)
+   ![Unit test](https://github.com/zindriana/tddExamination/actions/workflows/main.yml/badge.svg)
    
 
 click on this link
