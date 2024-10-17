@@ -14,7 +14,7 @@ public class Room {
     private final String descriptionWhenEnteringRoom;
     private final String descriptionOnInvestigateRoom;
     public List<Item> itemsInRoom = new ArrayList<Item>();
-    private List<Item> objectsInRoom = new ArrayList<>();
+    private List<RoomObject> objectsInRoom = new ArrayList<>();
     private NPC npcInRoom;
     private final Text output = new Text();
     private boolean isDoorLocked = true;
@@ -48,6 +48,16 @@ public class Room {
         return npcInRoom;
     }
 
+    // get room object method
+    public RoomObject getRoomObject(String roomObject) {
+        for(RoomObject obj : objectsInRoom) {
+            if (obj.getName().equals(roomObject)) {
+                return obj;
+            }
+        }
+        return null;
+    }
+
     //setters
     public void setNpcInRoom(NPC npcInRoom) {
         this.npcInRoom = npcInRoom;
@@ -76,6 +86,8 @@ public class Room {
                 System.out.println((i) + ". " + objectsInRoom.get(i).getName());
             }
     }
+
+
 
     public void investigateRoom() {
         System.out.println(getDescriptionOnInvestigateRoom());
