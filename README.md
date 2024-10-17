@@ -1,4 +1,4 @@
-   ![CI status](https://github.com/username/repository/actions/workflows/workflow.yml/badge.svg)
+   ![CI status](https://github.com/zindriana/tddExamination/actions/workflows/main.yml/badge.svg)
    
 
 click on this link
