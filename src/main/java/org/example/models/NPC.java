@@ -38,20 +38,36 @@ public class NPC {
 
 
     public void interact(Player player, Room room) {
-        System.out.println("Hi " + player.getName() + "!");
-        System.out.println("Choose an option (Enter 1 or 2): ");
-        System.out.println("1. Play puzzle ");
-        System.out.println("2. Get hint about an item ");
+        System.out.println("The mysterious hooded figure greets you: Hi " + player.getName() + "!");
+        boolean isConversationActive = true;
+        while(isConversationActive) {
+            System.out.println("\n (choose conversation option)");
+            System.out.println("1. How do you know my name? Who are you?");
+            System.out.println("2. Where am I?");
+            System.out.println("3. Why have you brought me here?");
+            System.out.println("4. How do I get out of here?");
+            System.out.println("5. End conversation");
 
-        int choice = sc.nextInt();
+            String choice = sc.nextLine();
 
-        switch (choice) {
-            case 1 -> {
-                Puzzles p = PuzzleUtil.getPuzzleByRoom(room.getName());
-                System.out.println("You are about to play puzzle " + p.getDescription());
-                p.solve();
+            switch (choice) {
+                case "1":
+                    System.out.println("I know a lot of things of great value, and, of lesser value.");
+                    break;
+                case "2":
+                    System.out.println("In the deep dungeon of course!");
+                    break;
+                case "3":
+                    System.out.println("To test your skills, mhuahahaha");
+                    break;
+                case "4":
+                    System.out.println("Through this door of course, that's what doors are created for. \n" +
+                            "Persistence is the key to this door.");
+                    break;
+                default:
+                    isConversationActive = false;
+                    break;
             }
-            case 2 -> System.out.println(output.getRoomHints(room.getName()));
         }
     }
 }

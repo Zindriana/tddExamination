@@ -19,6 +19,7 @@ public class Room {
     private NPC npcInRoom;
     private final Text output = new Text();
     private boolean isDoorLocked = true;
+    private boolean isRoomDark = false;
 
     //constructors
     public Room(int roomNumber, String name)  {
@@ -88,8 +89,12 @@ public class Room {
 
     public void investigateRoom() {
         System.out.println(getDescriptionOnInvestigateRoom());
-        System.out.println("\nItems in the room: ");
-        getListOfItems();
+        if(!isRoomDark) {
+            System.out.println("\nItems in the room: ");
+            getListOfItems();
+        } else {
+            System.out.println("\nIt is to dark to see any items in here.");
+        }
     }
 
     public boolean getIsDoorLocked() {

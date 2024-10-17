@@ -29,7 +29,7 @@ public class Player {
             throw new IllegalStateException("You can't move forward, room " + currentRoom + " is the last room\n");
         }
         if(getRoom().getIsDoorLocked()){
-            System.out.println("The door is locked. You need to find a way to unlock it\n");
+            System.out.println("The door is locked. You need to find a way to unlock it");
         } else {
             currentRoom++;
             //updateItemsRoomNumberInBackpack();
@@ -39,7 +39,7 @@ public class Player {
     }
     public void moveBack(){
         if(currentRoom == 0){
-            throw new IllegalStateException("You can't move back, there is only one way out of here, and it is forward!\n");
+            throw new IllegalStateException("You can't move back, there is only one way out of here, and it is forward!");
         }
         currentRoom--;
         //updateItemsRoomNumberInBackpack();
