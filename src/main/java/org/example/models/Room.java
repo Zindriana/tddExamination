@@ -15,7 +15,7 @@ public class Room {
     public List<Item> itemsInRoom = new ArrayList<Item>();
     private NPC npcInRoom;
     private final Text output = new Text();
-    private boolean doorIsLocked = true;
+    private boolean isDoorLocked = true;
 
     //constructors
     public Room(int roomNumber, String name)  {
@@ -69,6 +69,14 @@ public class Room {
         System.out.println(getDescriptionOnInvestigateRoom());
         System.out.println("Items in the room: ");
         getListOfItems();
+    }
+
+    public boolean getIsDoorLocked() {
+        return isDoorLocked;
+    }
+
+    public void setDoorIsLocked(boolean doorIsLocked) {
+        this.isDoorLocked = doorIsLocked;
     }
 
 }
