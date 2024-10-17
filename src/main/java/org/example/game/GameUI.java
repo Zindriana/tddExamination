@@ -25,10 +25,10 @@ public class GameUI {
          System.out.println("4. Investigate room");
          System.out.println("5. Exit");
 
-         int choice = sc.nextInt();
+         String choice = sc.nextLine();
 
          switch(choice) {
-             case 1:
+             case "1":
                  try {  // try catch block för att inte krasha koden när undantaget för att flytta för långt fram kastas
                      player.moveForward();
                  } catch (IllegalStateException e) {
@@ -36,7 +36,7 @@ public class GameUI {
                  }
                  break;
 
-             case 2:
+             case "2":
                  try {
                      player.moveBack();
                  } catch (IllegalStateException e) {
@@ -44,7 +44,7 @@ public class GameUI {
                  }
                  break;
 
-             case 3:
+             case "3":
                  try {
                      player.checkBackpack();
                  } catch (IllegalStateException e) {
@@ -52,12 +52,15 @@ public class GameUI {
                  }
                  break;
 
-             case 4:
+             case "4":
                  game.InvestigateRoomOption();
                  break;
 
-             case 5:
+             case "5":
                  on = false;
+                 break;
+             default:
+                 break;
          }
         }
     }

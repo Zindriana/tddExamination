@@ -24,8 +24,10 @@ public class Text {
         switch(roomName){
             case "Starting room":
                 return " The room is barely lit by a few candles and you feel a light breeze. " +
-                        "You see something bright and small on the dark stone floor. It is " + getItemDescription("Die") +
-                        " You also see a " + getNpcDescription("hooded figure") +  " standing next to a large wooden door. It seems like the door is the only way out of here. ";
+                        "You see something bright and small on the dark stone floor.\n " +
+                        "It is " + getItemDescription("Die").toLowerCase() +
+                        " You also see a " + getNpcDescription("Hooded figure").toLowerCase() +
+                        " \nstanding next to a large wooden door. It seems like the door is the only way out of here. ";
 
             case "Middle room":
                 return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet";
@@ -46,7 +48,7 @@ public class Text {
                 return "A thick white candle. It has been used sometime before.";
             case "Key" :
                 return "A golden key";
-            case "magicWand":
+            case "MagicWand":
                 return "A wand imbued with magical powers.";
             case "Sword":
                 return "A sharp, shiny sword.";
@@ -58,7 +60,7 @@ public class Text {
     //npc
     public String getNpcDescription(String npcName){
         switch(npcName){
-            case "hooded figure":
+            case "Hooded figure":
                 return "mysterious hooded figure";
             case "Another npc":
                 return " place holder for npc description in room 2";
