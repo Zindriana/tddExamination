@@ -36,22 +36,22 @@ public class Game {
         System.out.println("What do you want to do?");
         System.out.println("1.Pick up an item\n2.Use an item\n3.Interact with the npc\n4.Nothing");
         Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
+        String choice = sc.nextLine().trim();
         switch (choice) {
-            case 1:
+            case "1":
                 System.out.println("Enter the index of the item: ");
                 int itemIndex = sc.nextInt();
                 getPlayer().backpack.add(getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex));
                 break;
-            case 2:
+            case "2":
                 System.out.println("Enter the index of the item: ");
                 int itemIndex2 = sc.nextInt();
                 getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex2).use();
                 break;
-            case 3:
+            case "3":
                 getRoom(player.getCurrentRoom()).getNpcInRoom().interact(getPlayer(), getRoom(getPlayer().getCurrentRoom()));
                 break;
-            case 4:
+            default:
                 break;
 
         }
