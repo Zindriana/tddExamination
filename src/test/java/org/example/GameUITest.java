@@ -12,12 +12,13 @@ class GameUITest {
     private GameUI gameUI;
     private Room room;
     private final Building building = new Building();
+    private final Game game = new Game();
 
     @BeforeEach
     void setUp() {
         player = new Player("Adam", building);
         player.setCurrentRoom(1);
-        gameUI = new GameUI();
+        gameUI = new GameUI(game);
         room = new Room(1, "test");
     }
 

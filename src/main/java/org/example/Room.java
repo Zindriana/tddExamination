@@ -14,7 +14,6 @@ public class Room {
     public List<Item> itemsInRoom = new ArrayList<Item>();
     private NPC npcInRoom;
     private final Text output = new Text();
-    private Game game;
 
     //constructors
     public Room(int roomNumber, String name)  {
@@ -73,28 +72,6 @@ public class Room {
         System.out.println(getDescriptionOnInvestigateRoom());
         System.out.println("Items in the room: ");
         getListOfItems();
-        System.out.println("what do you want to do?");
-        System.out.println("1.pick up an item\n2.use an item\3.interact with the npc\4.nothing");
-        Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
-        switch (choice) {
-            case 1:
-                System.out.println("Enter the index of the item: ");
-                int itemIndex = sc.nextInt();
-                game.getPlayer().backpack.add(itemsInRoom.get(itemIndex));
-                break;
-            case 2:
-                System.out.println("Enter the index of the item: ");
-                int itemIndex2 = sc.nextInt();
-                itemsInRoom.get(itemIndex2).use();
-                break;
-            case 3:
-                //npc kod
-                break;
-            case 4:
-                break;
-
-        }
     }
 
 }

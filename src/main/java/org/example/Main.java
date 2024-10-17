@@ -6,7 +6,7 @@ public class Main {
 
         Game game = new Game();
         game.startGame();
-        GameUI gameUI = new GameUI();
+        GameUI gameUI = new GameUI(game);
         gameUI.roomOption(game.getPlayer());
     }
 }

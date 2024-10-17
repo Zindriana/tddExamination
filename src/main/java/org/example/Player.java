@@ -53,6 +53,10 @@ public class Player {
         }
     }
 
+    public Building getBuilding() {
+        return building;
+    }
+
     public String getName() {
         return name;
     }
