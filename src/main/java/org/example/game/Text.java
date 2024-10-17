@@ -30,7 +30,7 @@ public class Text {
                         " standing next to a large wooden door. \n It seems like the door is the only way out of here.";
 
             case "Middle room":
-                return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet\n" +
+                return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet.\n" +
                         "Unfortunately it is too dark to see anything in here and \n" +
                         "the cold breeze that you felt in the previous room is much stronger in here.";
             case "Third room":

@@ -101,7 +101,7 @@ public class Room {
     }
 
     public void setDescriptionOnInvestigateRoom(String newDescription) {
-        this.descriptionOnInvestigateRoom = descriptionOnInvestigateRoom;
+        this.descriptionOnInvestigateRoom = newDescription;
     }
 
 }

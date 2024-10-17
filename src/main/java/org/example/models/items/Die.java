@@ -20,7 +20,7 @@ public class Die extends Item {
 
         if(room.getRoomNumber() == 0){
             System.out.println("You throw the six sided die on the floor and it face you with " + dieRoll + " dots.\n" +
-                    "It´s light starts to glow stronger.\n");
+                    "It´s light starts to glow stronger.");
             if(totalDieValue >6){
                 room.setDoorIsLocked(false);
             }
@@ -30,13 +30,13 @@ public class Die extends Item {
                             "lighten up most of the room. As you suspected, it is just another small room in the cavern. \n" +
                             "Water droplets fall from the roof and the droplets that touch your face feel very cold. \n" +
                             "The light from the die is being returned from some reflection on the other side of the room.\n");
-            room.setDescriptionOnInvestigateRoom("A small cavern room. Water drops from the roof.\n" +
-                    "some patches of ice on the other side of the room reflects the light from your die. " +
+            room.setDescriptionOnInvestigateRoom("A small cavern room. Water drops from the roof." +
+                    "Some patches of ice on the other side of the room reflects the light from your die.\n " +
                     "A unproportional large door is also there. You reach for the door knob but stop. \n" +
                     "The whole door knob including the lock is totally frozen and covered in a layer of ice. \n" +
                     "You will not be able to open it at the moment. You also detect where the cold wind is coming from. \n" +
                     "There is a somewhat big hole at the top of the wall near the roof on the same side as the door. \n" +
-                    "It is to high up to reach." );
+                    "Unfortunately, it is to high up to reach." );
         }
     }
 
