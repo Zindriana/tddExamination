@@ -7,7 +7,7 @@ public class ItemDB {
 
     public ItemDB() {
 
-        items[0] = new Item("Die");
+        items[0] = new Die();
         items[1] = new Candle();
         items[2] = new Item("Key");
     }

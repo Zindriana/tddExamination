@@ -1,6 +1,7 @@
 package org.example.models;
 
 import org.example.game.Text;
+import org.example.models.RoomObjects.RoomObject;
 import org.example.models.items.Item;
 
 import java.util.ArrayList;
@@ -75,9 +76,6 @@ public class Room {
 
     }
 
-
-
-
     //get a list of all objects in the room
     public void getListOfObjects() {
         if (objectsInRoom.isEmpty()) {
@@ -87,8 +85,6 @@ public class Room {
                 System.out.println((i) + ". " + objectsInRoom.get(i).getName());
             }
     }
-
-
 
     public void investigateRoom() {
         System.out.println(getDescriptionOnInvestigateRoom());

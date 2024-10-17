@@ -32,6 +32,7 @@ public class Player {
             System.out.println("The door is locked. You need to find a way to unlock it\n");
         } else {
             currentRoom++;
+            updateItemsRoomNumberInBackpack();
             System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
         }
 
@@ -41,6 +42,7 @@ public class Player {
             throw new IllegalStateException("You cant move back, room 0 is the first room\n");
         }
         currentRoom--;
+        updateItemsRoomNumberInBackpack();
         System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
     }
     public void checkBackpack() {
@@ -75,6 +77,12 @@ public class Player {
 
     public void setCurrentRoom(int currentRoom) {
         this.currentRoom = currentRoom;
+    }
+
+    public void updateItemsRoomNumberInBackpack() {
+        for(Item item : backpack){
+            item.setCurrentRoom(getCurrentRoom());
+        }
     }
 }
 
