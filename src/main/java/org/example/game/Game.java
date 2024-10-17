@@ -1,6 +1,6 @@
 package org.example.game;
 
-import org.example.db.Building;
+import org.example.db.*;
 import org.example.models.Item;
 import org.example.models.NPC;
 import org.example.models.Player;
@@ -11,15 +11,11 @@ import java.util.Scanner;
 public class Game {
     private final Scanner sc = new Scanner(System.in);
     private Player player;
-    private final Item[] items = new Item[10]; //change this value later when we now how many different items exist in the game
-    private final NPC[] npcs = new NPC[4]; //change this value when we know how many npc we need
+    private final ItemDB items = new ItemDB(); //change this value later when we now how many different items exist in the game
+    private final NpcDB npcs = new NpcDB(); //change this value when we know how many npc we need
     private final Building building = new Building();
 
     public Game() {
-        items[0] = new Item("Die");
-        items[1] = new Item("Candle");
-        items[2] = new Item("Key");
-        npcs[0] = new NPC("Hooded figure");
     }
 
     public void startGame(){
@@ -62,20 +58,22 @@ public class Game {
     }
 
     public Item getItem(String itemName) {
-        for(Item item : items){
-            if(item != null && item.getName().equals(itemName)){
-                return item;
-            }
-        }
-        return null;
+        return items.getItem(itemName);
+//        for(Item item : items){
+//            if(item != null && item.getName().equals(itemName)){
+//                return item;
+//            }
+//        }
+//        return null;
     }
 
     public NPC getNPC(String npcName) {
-        for(NPC npc : npcs){
-            if(npc != null && npc.getName().equals(npcName))
-             return npc;
-        }
-        return null;
+        return npcs.getNPC(npcName);
+//        for(NPC npc : npcs){
+//            if(npc != null && npc.getName().equals(npcName))
+//             return npc;
+//        }
+//        return null;
     }
 
     public Room getRoom(int roomNumber) {
