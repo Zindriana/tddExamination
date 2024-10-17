@@ -6,6 +6,7 @@ import java.util.Map;
 public class Text {
     // Declaring itemDescriptions as a class variable
     private Map<String, String> itemDescriptions;
+    private Map<String, String> roomDescriptions;
 
     public Text() {
         // Initializing item descriptions
@@ -13,31 +14,27 @@ public class Text {
         itemDescriptions.put("Die", "A bright white six-sided die.");
         itemDescriptions.put("Magic Wand", "A wand imbued with magical powers.");
         itemDescriptions.put("Sword", "A sharp, shiny sword.");
-        // Add more items as needed
+
+        // Initializing room descriptions
+        roomDescriptions = new HashMap<>();
+        roomDescriptions.put("Starting room", "You return to the starting room.");
+        roomDescriptions.put("Middle room", "You enter a dark cavern.");
+        roomDescriptions.put("Third room", "You step into a mysterious chamber filled with echoes.");
     }
 
     // Room descriptions
     public String getRoomDescriptionWhenEnter(String roomName) {
-        switch (roomName) {
-            case "Starting room":
-                return "You return to the starting room.";
-            case "Middle room":
-                return "You enter a dark cavern.";
-            case "Third room":
-                return "You step into a mysterious chamber filled with echoes.";
-            default:
-                return "This room does not exist.";
-        }
+        return roomDescriptions.getOrDefault(roomName, "This room does not exist.");
     }
 
     public String getRoomDescriptionWhenInvestigate(String roomName) {
         switch (roomName) {
             case "Starting room":
                 return "The room is barely lit by a few candles. You feel a light breeze. " +
-                       "You see something bright and small on the dark stone floor: " + 
-                       getItemDescription("Die") + 
-                       ". A hooded figure stands next to a large wooden door, " +
-                       "which seems to be the only way out.";
+                        "You see something bright and small on the dark stone floor: " +
+                        getItemDescription("Die") +
+                        ". A hooded figure stands next to a large wooden door, " +
+                        "which seems to be the only way out.";
             case "Middle room":
                 return "You hear droplets falling onto the cavern floor. The stones feel cold against your bare feet.";
             case "Third room":
