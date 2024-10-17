@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.models.Room;
 import org.example.models.items.Item;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,7 @@ public class ItemTest {
     @Test
     public void testUse() {
         Item shield = new Item("Shield");  // Use only the name
-        shield.use();
+        shield.use(new Room(0,"Starting room"));
         assertEquals("Shield", shield.getName());
     }
 

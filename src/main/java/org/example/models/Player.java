@@ -11,7 +11,7 @@ public class Player {
 
     private final String name;
     private int currentRoom;
-    public List<Item> backpack = new ArrayList<Item>();
+    public List<Item> backpack = new ArrayList<>();
     private final Building building;
 
 
@@ -26,30 +26,30 @@ public class Player {
 
     public void moveForward(){
         if(currentRoom == building.getNumberOfRooms() -1){
-            throw new IllegalStateException("You cant move forward, room " + currentRoom + " is the last room\n");
+            throw new IllegalStateException("You can't move forward, room " + currentRoom + " is the last room\n");
         }
         if(getRoom().getIsDoorLocked()){
             System.out.println("The door is locked. You need to find a way to unlock it\n");
         } else {
             currentRoom++;
-            updateItemsRoomNumberInBackpack();
+            //updateItemsRoomNumberInBackpack();
             System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
         }
 
     }
     public void moveBack(){
         if(currentRoom == 0){
-            throw new IllegalStateException("You cant move back, room 0 is the first room\n");
+            throw new IllegalStateException("You can't move back, there is only one way out of here, and it is forward!\n");
         }
         currentRoom--;
-        updateItemsRoomNumberInBackpack();
+        //updateItemsRoomNumberInBackpack();
         System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
     }
     public void checkBackpack() {
         if (backpack.isEmpty()) {
             throw new IllegalStateException("There are no items in the backpack\n");
         }
-        System.out.println("The items in your backpack is: ");
+        System.out.println("The items in your backpack are: ");
         for (int i = 0; i < backpack.size(); i++) {
             System.out.println((i) + ". " + backpack.get(i).getName());
         }
@@ -57,9 +57,9 @@ public class Player {
         Scanner sc = new Scanner(System.in);
         String choice = sc.nextLine();
         if (choice.equals("y")) {
-            System.out.println("Chose the item you want to use with index nr");
+            System.out.println("Choose the item you want to use with index nr");
             int choice2 = sc.nextInt();
-            backpack.get(choice2).use();
+            backpack.get(choice2).use(building.getRoom(getCurrentRoom()));
         }
     }
 
@@ -79,11 +79,11 @@ public class Player {
         this.currentRoom = currentRoom;
     }
 
-    public void updateItemsRoomNumberInBackpack() {
-        for(Item item : backpack){
-            item.setCurrentRoom(getCurrentRoom());
-        }
-    }
+//    public void updateItemsRoomNumberInBackpack() {
+//        for(Item item : backpack){
+//            item.setCurrentRoom(getCurrentRoom());
+//        }
+//    }
 }
 
 

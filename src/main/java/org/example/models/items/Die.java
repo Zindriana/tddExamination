@@ -1,5 +1,7 @@
 package org.example.models.items;
 
+import org.example.models.Room;
+
 import java.util.Random;
 
 public class Die extends Item {
@@ -12,11 +14,14 @@ public class Die extends Item {
     }
 
     @Override
-    public void use(){
+    public void use(Room room){
         int dieRoll = rand.nextInt(5) + 2;
         totalDieValue += dieRoll;
-        System.out.println("You throw the six sided die on the floor and it face you with " + dieRoll + "dots.\n" +
-                "It´s light starts to bright stronger.");
+        System.out.println("You throw the six sided die on the floor and it face you with " + dieRoll + " dots.\n" +
+                "It´s light starts to glow stronger.\n");
+        if(room.getRoomNumber()==0 && totalDieValue >6){
+            room.setDoorIsLocked(false);
+        }
     }
 
     public int getTotalDieValue(){

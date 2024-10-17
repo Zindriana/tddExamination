@@ -1,6 +1,7 @@
 package org.example.models.items;
 
 import org.example.game.Text;
+import org.example.models.Room;
 
 public class Item {
 
@@ -40,15 +41,15 @@ public class Item {
         System.out.println("You have picked up: " + name);
     }
 
-    public void use() {
+    public void use(Room room) {
         System.out.println("You have used: " + name);
     }
 
-    public int getCurrentRoom() {
-        return currentRoom;
-    }
-
-    public void setCurrentRoom(int currentRoom) {
-        this.currentRoom = currentRoom;
-    }
+//    public int getCurrentRoom() {
+//        return currentRoom;
+//    }
+//
+//    public void setCurrentRoom(int currentRoom) {
+//        this.currentRoom = currentRoom;
+//    }
 }

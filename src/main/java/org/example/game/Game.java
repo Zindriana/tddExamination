@@ -27,7 +27,7 @@ public class Game {
         }
         player = new Player(name, building);
         player.setCurrentRoom(0);
-        System.out.println("Hello " + getPlayer().getName() + ". Welcome to my dungeon. To get out of here, you need to solve my puzzles!\n");
+        System.out.println("You wake up, dizzy and cold. You lay on an uneven naked stone floor. \nIt seems that you are in some sort of dim lit cavern\n");
     }
 
     public void InvestigateRoomOption(){

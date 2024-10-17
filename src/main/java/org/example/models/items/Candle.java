@@ -1,5 +1,7 @@
 package org.example.models.items;
 
+import org.example.models.Room;
+
 public class Candle extends Item{
 
     private boolean isLit = false;
@@ -9,11 +11,11 @@ public class Candle extends Item{
     }
 
     @Override
-    public void use() {
-        if (!isLit && getCurrentRoom() == 0){
+    public void use(Room room) {
+        if (!isLit && room.getRoomNumber() == 0){
             System.out.println("You lit the candle.");
             isLit = true;
-        } else if (isLit && getCurrentRoom() == 1){
+        } else if (isLit && room.getRoomNumber() == 1){
             System.out.println("You use the candle to get some light in the dark cavern, \n " +
                     "the light flickers wild in the cold breeze and \n" +
                     "you try to protect the small flame with your hand, but in wane.\n" +

@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.models.Room;
 import org.example.models.items.Item;
 import org.example.models.Player;
 import org.example.db.Building;
@@ -62,11 +63,11 @@ class PlayerTest {
 
         player.backpack.add(mockItem); //addar "Mocked sword" till förta platsen i ryggsäcken
         player.backpack.add(mockItem2);
-        mockItem.use();
+        mockItem.use(new Room(0, "Starting room"));
 
         assertEquals("Mocked sword", player.backpack.get(0).getName());
         assertEquals("Mocked shield", player.backpack.get(1).getName());
-        verify(mockItem).use();
+        verify(mockItem).use(new Room(0, "Starting room"));
 
     }
 
