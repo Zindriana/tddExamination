@@ -1,4 +1,4 @@
-package org.example.models;
+package org.example.models.items;
 
 import org.example.game.Text;
 
@@ -6,6 +6,7 @@ public class Item {
 
     private String name;
     private String description;
+    private int currentRoom;
 
 
     // Constructor that fetches the description from the Text class
@@ -41,5 +42,13 @@ public class Item {
 
     public void use() {
         System.out.println("You have used: " + name);
+    }
+
+    public int getCurrentRoom() {
+        return currentRoom;
+    }
+
+    public void setCurrentRoom(int currentRoom) {
+        this.currentRoom = currentRoom;
     }
 }

@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.models.Item;
+import org.example.models.items.Item;
 import org.example.models.NPC;
 import org.example.models.Room;
 import org.junit.jupiter.api.Test;

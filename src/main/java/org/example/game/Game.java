@@ -1,7 +1,7 @@
 package org.example.game;
 
 import org.example.db.*;
-import org.example.models.Item;
+import org.example.models.items.Item;
 import org.example.models.NPC;
 import org.example.models.Player;
 import org.example.models.Room;

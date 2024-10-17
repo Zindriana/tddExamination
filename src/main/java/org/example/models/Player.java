@@ -1,6 +1,7 @@
 package org.example.models;
 
 import org.example.db.Building;
+import org.example.models.items.Item;
 
 import java.util.ArrayList;
 import java.util.List;

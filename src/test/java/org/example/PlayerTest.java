@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.models.Item;
+import org.example.models.items.Item;
 import org.example.models.Player;
 import org.example.db.Building;
 import org.junit.jupiter.api.BeforeEach;
