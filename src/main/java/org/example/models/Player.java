@@ -1,4 +1,6 @@
-package org.example;
+package org.example.models;
+
+import org.example.db.Building;
 
 import java.util.ArrayList;
 import java.util.List;

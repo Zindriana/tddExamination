@@ -1,4 +1,8 @@
-package org.example;
+package org.example.models;
+
+import org.example.puzzles.PuzzleUtil;
+import org.example.puzzles.Puzzles;
+import org.example.game.Text;
 
 import java.util.Scanner;
 

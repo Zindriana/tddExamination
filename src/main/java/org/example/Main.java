@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.game.Game;
+import org.example.game.GameUI;
+
 public class Main {
 
     public static void main(String[] args) {

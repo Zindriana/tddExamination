@@ -1,4 +1,6 @@
-package org.example;
+package org.example.game;
+
+import org.example.models.Player;
 
 import java.util.Scanner;
 

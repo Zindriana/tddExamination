@@ -1,4 +1,10 @@
-package org.example;
+package org.example.game;
+
+import org.example.db.Building;
+import org.example.models.Item;
+import org.example.models.NPC;
+import org.example.models.Player;
+import org.example.models.Room;
 
 import java.util.Scanner;
 

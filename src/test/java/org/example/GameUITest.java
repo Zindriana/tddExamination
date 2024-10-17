@@ -1,5 +1,10 @@
 package org.example;
 
+import org.example.game.Game;
+import org.example.game.GameUI;
+import org.example.models.Player;
+import org.example.models.Room;
+import org.example.db.Building;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

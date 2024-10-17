@@ -1,4 +1,6 @@
-package org.example;
+package org.example.db;
+
+import org.example.models.Room;
 
 public class Building {
 

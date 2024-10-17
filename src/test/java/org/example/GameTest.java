@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.game.Game;
+import org.example.models.Item;
+import org.example.models.NPC;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

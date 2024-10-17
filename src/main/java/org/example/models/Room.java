@@ -1,8 +1,9 @@
-package org.example;
+package org.example.models;
+
+import org.example.game.Text;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Room {
 

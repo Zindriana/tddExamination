@@ -1,4 +1,6 @@
-package org.example;
+package org.example.models;
+
+import org.example.game.Text;
 
 public class Item {
 
