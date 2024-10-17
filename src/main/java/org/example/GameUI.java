@@ -52,7 +52,6 @@ public class GameUI {
 
              case 4:
                  game.InvestigateRoomOption();
-                 //player.getRoom().investigateRoom();
                  break;
 
              case 5:
