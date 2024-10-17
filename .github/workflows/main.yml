@@ -4,7 +4,7 @@ on:
   push:
 
 
-    branches: [ "dev", "Adam", "Puzzles", "Zindriana", "Youssef", "NPC", "Mahmoud" ]
+    branches: [ ]
 
 
 
