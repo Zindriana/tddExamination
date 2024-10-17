@@ -30,15 +30,9 @@ public class Text {
         }
     }
 
-    public String getItemDescription(String itemName){
-        switch(itemName){
-            case "Die":
-                return "A bright white six-sided die.";
-            case "magicWand":
-                return "A wand imbued with magical powers.";
-            default:
-                return null;
-        }
+   // Items
+    public String getItemDescription(String itemName) {
+        return itemDescriptions.getOrDefault(itemName, null);
     }
    
     //npc
