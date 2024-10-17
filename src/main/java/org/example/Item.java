@@ -5,12 +5,11 @@ public class Item {
     private String name;
     private String description;
 
-
-    // Constructor that fetches the description from the Text class
-    public Item(String name) {
+    // Konstruktorn som hämtar beskrivningen baserat på beskrivningsnyckeln
+    public Item(String name, String descriptionKey) {
         this.name = name;
-        this.description = new Text().getItemDescription(name); // Fetch description based on name
-
+        // Hämta beskrivningen från Text-klassen
+        this.description = new Text().getItemDescription(descriptionKey); // Justerat för att hämta baserat på nyckeln
     }
 
     public String getName() {
@@ -26,7 +25,7 @@ public class Item {
     }
 
     public void setDescription(String description) {
-        this.description = description; // Allows manual setting of description
+        this.description = description; // Möjliggör manuell inställning av beskrivning
     }
 
     public void investigateItem() {
