@@ -62,10 +62,6 @@ public class Room {
         }
     }
 
-    //Entering Room
-    public void enterRoom() {
-
-    }
 
     public void investigateRoom() {
         System.out.println(getDescriptionOnInvestigateRoom());
