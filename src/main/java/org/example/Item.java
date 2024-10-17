@@ -6,6 +6,9 @@ public class Item {
 
     // Constructor that fetches the description from the Text class
     public Item(String name, Text text) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Item name cannot be null or empty.");
+        }
         this.name = name;
         this.description = text.getItemDescription(name);
     }
