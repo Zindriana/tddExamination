@@ -19,4 +19,8 @@ public class Building {
     public Room getRoom(int roomNumber) {
         return rooms[roomNumber];
     }
+
+    public String getName(int roomNumber) {
+        return rooms[roomNumber].getName();
+    }
 }

@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class GameUI {
 
+    private Game game;
+
+    public GameUI(Game game) {
+        this.game = game;
+    }
+
     public void roomOption(Player player) {
 
         Scanner sc = new Scanner(System.in);
@@ -45,7 +51,7 @@ public class GameUI {
                  break;
 
              case 4:
-                 player.getRoom().investigateRoom();
+                 game.InvestigateRoomOption();
                  break;
 
              case 5:
