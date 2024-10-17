@@ -27,7 +27,7 @@ public class Text {
                         "You see something bright and small on the dark stone floor.\n " +
                         "It is " + getItemDescription("Die").toLowerCase() +
                         " You also see a " + getNpcDescription("Hooded figure").toLowerCase() +
-                        " \nstanding next to a large wooden door. It seems like the door is the only way out of here. ";
+                        " standing next to a large wooden door. It seems like the door is the only way out of here. \n";
 
             case "Middle room":
                 return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet";
