@@ -13,6 +13,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -29,7 +30,14 @@
             <artifactId>byte-buddy</artifactId>
             <version>1.14.15</version>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.4.0</version> <!-- Check for the latest version -->
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
     <build>
         <testSourceDirectory>src/test/java</testSourceDirectory>
         <plugins>
@@ -43,6 +51,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
