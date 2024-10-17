@@ -56,6 +56,20 @@ public class Text {
                 return null;
         }
     }
+
+    // Object that u not can pick up
+    public String getObjectDescription(String objectName) {
+        switch (objectName){
+            case "Bench":
+                return "a long tree bench";
+            case "doorknob":
+                return "a electrical doorKnob to open the door.";
+
+            default:
+                return null;
+        }
+
+    }
    
     //npc
     public String getNpcDescription(String npcName){
