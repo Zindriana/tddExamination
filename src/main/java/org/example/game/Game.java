@@ -33,7 +33,7 @@ public class Game {
     public void InvestigateRoomOption(){
         getRoom(player.getCurrentRoom()).investigateRoom();
 
-        System.out.println("What do you want to do?");
+        System.out.println("\nWhat do you want to do?");
         System.out.println("1.Pick up an item\n2.Interact with an object\n3.Interact with the npc\n4.Nothing");
         Scanner sc = new Scanner(System.in);
         String choice = sc.nextLine().trim();
@@ -42,6 +42,7 @@ public class Game {
                 System.out.println("Enter the index of the item: ");
                 int itemIndex = sc.nextInt();
                 try {
+                    getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex).pickUp();
                     getPlayer().backpack.add(getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex));
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("You must choose another index");

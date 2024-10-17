@@ -7,9 +7,9 @@ public class Text {
     public String getRoomDescriptionWhenEnter(String roomName){
         switch(roomName){
             case "Starting room":
-                return "You return to the starting room";
+                return "You return to the room where you woke up.";
             case "Middle room":
-                return "You enter a dark cavern";
+                return "You enter into a very dark cavern";
             case "Third room":
                 return " place holder third room";
             case "Last room":
@@ -24,13 +24,15 @@ public class Text {
         switch(roomName){
             case "Starting room":
                 return " The room is barely lit by a few candles and you feel a light breeze. " +
-                        "You see something bright and small on the dark stone floor.\n " +
+                        "You see something small glowing on the dark stone floor.\n " +
                         "It is " + getItemDescription("Die").toLowerCase() +
                         " You also see a " + getNpcDescription("Hooded figure").toLowerCase() +
-                        " standing next to a large wooden door. It seems like the door is the only way out of here. \n";
+                        " standing next to a large wooden door. \n It seems like the door is the only way out of here.";
 
             case "Middle room":
-                return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet";
+                return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet\n" +
+                        "Unfortunately it is too dark to see anything in here and \n" +
+                        "the cold breeze that you felt in the previous room is much stronger in here.";
             case "Third room":
                 return " place holder third room";
             case "Last room":
@@ -43,7 +45,7 @@ public class Text {
     public String getItemDescription(String itemName){
         switch(itemName){
             case "Die":
-                return "A bright white six-sided die.";
+                return "A bright white six-sided die. It glows weak in you hand.";
             case "Candle":
                 return "A thick white candle. It has been used sometime before.";
             case "Key" :

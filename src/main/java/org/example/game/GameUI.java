@@ -18,7 +18,7 @@ public class GameUI {
         boolean on = true;
 
         while(on) {
-         System.out.println("Choose an option: ");
+         System.out.println("\nChoose an option: ");
          System.out.println("1. Move forward");
          System.out.println("2. Move backward");
          System.out.println("3. Check backpack");

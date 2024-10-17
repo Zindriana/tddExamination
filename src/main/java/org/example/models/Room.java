@@ -13,7 +13,7 @@ public class Room {
     private final int roomNumber;
     private final String name;
     private final String descriptionWhenEnteringRoom;
-    private final String descriptionOnInvestigateRoom;
+    private String descriptionOnInvestigateRoom;
     public List<Item> itemsInRoom = new ArrayList<Item>();
     private List<RoomObject> objectsInRoom = new ArrayList<>();
     private NPC npcInRoom;
@@ -88,7 +88,7 @@ public class Room {
 
     public void investigateRoom() {
         System.out.println(getDescriptionOnInvestigateRoom());
-        System.out.println("Items in the room: ");
+        System.out.println("\nItems in the room: ");
         getListOfItems();
     }
 
@@ -98,6 +98,10 @@ public class Room {
 
     public void setDoorIsLocked(boolean doorIsLocked) {
         this.isDoorLocked = doorIsLocked;
+    }
+
+    public void setDescriptionOnInvestigateRoom(String newDescription) {
+        this.descriptionOnInvestigateRoom = descriptionOnInvestigateRoom;
     }
 
 }
