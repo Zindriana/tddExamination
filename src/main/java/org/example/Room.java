@@ -57,8 +57,8 @@ public class Room {
         if (itemsInRoom.isEmpty()) {
             System.out.println("There are no items in this room.");
         } else {
-            for (Item item : itemsInRoom) {
-                System.out.println(item.getName());
+            for (int i = 0; i < itemsInRoom.size(); i++) {
+                System.out.println((i) + ". " + itemsInRoom.get(i).getName());
             }
         }
     }
