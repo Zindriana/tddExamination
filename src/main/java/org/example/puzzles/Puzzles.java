@@ -1,4 +1,4 @@
-package org.example;
+package org.example.puzzles;
 
 public abstract class Puzzles {
     protected String description;

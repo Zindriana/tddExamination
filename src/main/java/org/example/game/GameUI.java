@@ -1,8 +1,16 @@
-package org.example;
+package org.example.game;
+
+import org.example.models.Player;
 
 import java.util.Scanner;
 
 public class GameUI {
+
+    private Game game;
+
+    public GameUI(Game game) {
+        this.game = game;
+    }
 
     public void roomOption(Player player) {
 
@@ -45,7 +53,7 @@ public class GameUI {
                  break;
 
              case 4:
-                 player.getRoom().investigateRoom();
+                 game.InvestigateRoomOption();
                  break;
 
              case 5:

@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.models.NPC;
+import org.example.models.Player;
+import org.example.puzzles.Puzzles;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

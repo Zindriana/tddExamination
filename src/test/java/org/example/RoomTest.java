@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.models.items.Item;
+import org.example.models.NPC;
+import org.example.models.Room;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -191,7 +194,7 @@ class RoomTest {
         //then
         assertEquals("The room is barely lit by a few candles and you feel a light breeze." +
                 " You see something bright and small on the dark stone floor. It is A bright white six-sided die." +
-                " You also see a mysterious hooded figure standing next to a large wooden door. It seems like the door is the only way out of here. " + System.getProperty("line.separator") +"Items in the room: " + System.getProperty("line.separator") + item.getName(), outContent.toString().trim());
+                " You also see a mysterious hooded figure standing next to a large wooden door. It seems like the door is the only way out of here. " + System.getProperty("line.separator") +"Items in the room: " + System.getProperty("line.separator") +"0. Candle", outContent.toString().trim());
     }
 
 }

@@ -1,4 +1,7 @@
-package org.example;
+package org.example.models;
+
+import org.example.db.Building;
+import org.example.models.items.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +28,13 @@ public class Player {
         if(currentRoom == building.getNumberOfRooms() -1){
             throw new IllegalStateException("You cant move forward, room " + currentRoom + " is the last room\n");
         }
-        currentRoom++;
-        System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
+        if(getRoom().getIsDoorLocked()){
+            System.out.println("The door is locked. You need to find a way to unlock it\n");
+        } else {
+            currentRoom++;
+            System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
+        }
+
     }
     public void moveBack(){
         if(currentRoom == 0){
@@ -51,6 +59,10 @@ public class Player {
             int choice2 = sc.nextInt();
             backpack.get(choice2).use();
         }
+    }
+
+    public Building getBuilding() {
+        return building;
     }
 
     public String getName() {

@@ -1,5 +1,8 @@
 package org.example;
 
+import org.example.game.Game;
+import org.example.models.items.Item;
+import org.example.models.NPC;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -35,8 +38,8 @@ class GameTest {
 
             assertEquals(inputName, game.getPlayer().getName());
             assertEquals(
-                    "Choose your name" + System.getProperty("line.separator") + "Hello " + game.getPlayer().getName() +
-                            ". Welcome to my dungeon. To get out you need to solve my puzzles!",
+                    "Choose your name" + System.lineSeparator() + "Hello " + game.getPlayer().getName() +
+                            ". Welcome to my dungeon. To get out of here, you need to solve my puzzles!",
                     outContent.toString().trim());
         } finally {
             System.setIn(originalIn);
