@@ -39,7 +39,7 @@ class GameTest {
             assertEquals(inputName, game.getPlayer().getName());
             assertEquals(
                     "Choose your name" + System.getProperty("line.separator") + "Hello " + game.getPlayer().getName() +
-                            ". Welcome to my dungeon. To get out you need to solve my puzzles!",
+                            ". Welcome to my dungeon. To get out of here, you need to solve my puzzles!",
                     outContent.toString().trim());
         } finally {
             System.setIn(originalIn);
