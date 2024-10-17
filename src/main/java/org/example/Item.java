@@ -1,15 +1,16 @@
-package org.example;
+import java.util.Objects;
 
 public class Item {
+    private final String name;
+    private final String description;
 
-    private String name;
-    private String description;
-
-    // Konstruktorn som tar namnet och hämtar beskrivningen från Text-klassen
+    // Constructor that fetches the description from the Text class
     public Item(String name) {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Item name cannot be null or empty.");
+        }
         this.name = name;
-        // Hämta beskrivningen från Text-klassen baserat på namnet
-        this.description = new Text().getItemDescription(name);
+        this.description = Text.getDescriptionForItem(name); // Fetch description based on the name
     }
 
     public String getName() {
@@ -20,25 +21,27 @@ public class Item {
         return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
-        // Uppdatera beskrivningen om namnet ändras
-        this.description = new Text().getItemDescription(name);
-    }
-
-    public void setDescription(String description) {
-        this.description = description; // Möjliggör manuell inställning av beskrivning
-    }
-
+    // Method to investigate the item
     public void investigateItem() {
-        System.out.println("You investigate the " + name + ". " + description);
+        System.out.println("You are investigating the item: " + name);
+        System.out.println(description != null ? description : "No description available.");
     }
 
-    public void pickUp() {
-        System.out.println("You have picked up: " + name);
+    @Override
+    public String toString() {
+        return "Item{name='" + name + "', description='" + description + "'}";
     }
 
-    public void use() {
-        System.out.println("You have used: " + name);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Item)) return false;
+        Item item = (Item) o;
+        return name.equals(item.name) && Objects.equals(description, item.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, description);
     }
 }
