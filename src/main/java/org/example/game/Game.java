@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Game {
     private final Scanner sc = new Scanner(System.in);
     private Player player;
-    private final ItemDB items = new ItemDB(); //change this value later when we now how many different items exist in the game
-    private final NpcDB npcs = new NpcDB(); //change this value when we know how many npc we need
+    private final ItemDB items = new ItemDB();
+    private final NpcDB npcs = new NpcDB();
     private final Building building = new Building();
 
     public Game() {
@@ -27,7 +27,7 @@ public class Game {
         }
         player = new Player(name, building);
         player.setCurrentRoom(0);
-        System.out.println("Hello " + getPlayer().getName() + ". Welcome to my dungeon. To get out you need to solve my puzzles!");
+        System.out.println("Hello " + getPlayer().getName() + ". Welcome to my dungeon. To get out of here, you need to solve my puzzles!\n");
     }
 
     public void InvestigateRoomOption(){
@@ -57,24 +57,9 @@ public class Game {
         }
     }
 
-    public Item getItem(String itemName) {
-        return items.getItem(itemName);
-//        for(Item item : items){
-//            if(item != null && item.getName().equals(itemName)){
-//                return item;
-//            }
-//        }
-//        return null;
-    }
+    public Item getItem(String itemName) {return items.getItem(itemName);}
 
-    public NPC getNPC(String npcName) {
-        return npcs.getNPC(npcName);
-//        for(NPC npc : npcs){
-//            if(npc != null && npc.getName().equals(npcName))
-//             return npc;
-//        }
-//        return null;
-    }
+    public NPC getNPC(String npcName) {return npcs.getNPC(npcName);}
 
     public Room getRoom(int roomNumber) {
         return building.getRoom(roomNumber);
