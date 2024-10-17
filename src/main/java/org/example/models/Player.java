@@ -27,6 +27,9 @@ public class Player {
         if(currentRoom == building.getNumberOfRooms() -1){
             throw new IllegalStateException("You cant move forward, room " + currentRoom + " is the last room\n");
         }
+        if(!getRoom().getIsDoorLocked()){
+            System.out.println("The door is locked. You need to find a way to unlock it\n");
+        }
         currentRoom++;
         System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
     }
