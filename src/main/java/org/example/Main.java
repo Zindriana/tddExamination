@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.game.Clue;
 import org.example.game.Game;
 import org.example.game.GameUI;
 
@@ -16,5 +17,6 @@ public class Main {
         game.startGame();
         GameUI gameUI = new GameUI(game);
         gameUI.roomOption(game.getPlayer());
+
     }
 }

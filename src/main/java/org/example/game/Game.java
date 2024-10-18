@@ -38,7 +38,7 @@ public class Game {
         Scanner sc = new Scanner(System.in);
         String choice = sc.nextLine().trim();
         switch (choice) {
-            case "1":
+            case "1": //Pick up an item
                 System.out.println("Enter the index of the item: ");
                 int itemIndex = sc.nextInt();
                 try {
@@ -48,16 +48,16 @@ public class Game {
                     System.out.println("You must choose another index");
                 }
                 break;
-            case "2":
+            case "2": //Interact with object
                 System.out.println("This option is disabled for the moment");
-//                int itemIndex2 = sc.nextInt();
-//                try {
-//                    getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex2).use();
-//                } catch (IndexOutOfBoundsException e) {
-//                    System.out.println("You must choose another index");
-//                }
+                int objectIndex = sc.nextInt();
+                try {
+                    getRoom(player.getCurrentRoom()).objectsInRoom.get(objectIndex).interactWithObject(getRoom(player.getCurrentRoom()));;
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("You must choose another index");
+                }
                 break;
-            case "3":
+            case "3": //Interact with npc
                 if(getRoom(player.getCurrentRoom()).getNpcInRoom() != null){
                     getRoom(player.getCurrentRoom()).getNpcInRoom().interact(getPlayer(), getRoom(getPlayer().getCurrentRoom()));
                 } else {

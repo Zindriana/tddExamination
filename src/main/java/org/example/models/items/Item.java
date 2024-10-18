@@ -44,12 +44,4 @@ public class Item {
     public void use(Room room) {
         System.out.println("You have used: " + name);
     }
-
-//    public int getCurrentRoom() {
-//        return currentRoom;
-//    }
-//
-//    public void setCurrentRoom(int currentRoom) {
-//        this.currentRoom = currentRoom;
-//    }
 }

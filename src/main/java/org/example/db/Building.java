@@ -16,9 +16,13 @@ public class Building {
         rooms[3] = new Room(3, "Last room");
 
         //adding stuff to the rooms
+        //room 1
         rooms[0].setNpcInRoom(npcDB.getNPC("Hooded figure"));
         rooms[0].itemsInRoom.add(itemDB.getItem("Die"));
         rooms[0].itemsInRoom.add(itemDB.getItem("Candle"));
+
+        //room 2
+        rooms[1].setRoomDark(true);
     }
 
     public int getNumberOfRooms() {

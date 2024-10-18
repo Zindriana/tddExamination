@@ -11,8 +11,7 @@ public class Player {
 
     private final String name;
     private int currentRoom;
-    public List<Item> backpack = new ArrayList<>();
-    //private List<Clue> clues = new ArrayList<>();
+    public static List<Item> backpack = new ArrayList<>();
     private final Building building;
 
 
@@ -33,7 +32,6 @@ public class Player {
             System.out.println("The door is locked. You need to find a way to unlock it");
         } else {
             currentRoom++;
-            //updateItemsRoomNumberInBackpack();
             System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
         }
 
@@ -43,7 +41,6 @@ public class Player {
             throw new IllegalStateException("You can't move back, there is only one way out of here, and it is forward!");
         }
         currentRoom--;
-        //updateItemsRoomNumberInBackpack();
         System.out.println(building.getRoom(currentRoom).getDescriptionWhenEnteringRoom());
     }
     public void checkBackpack() {
@@ -64,8 +61,13 @@ public class Player {
         }
     }
 
-    public Building getBuilding() {
-        return building;
+    public static Item getItem(String itemName) {
+        for (Item item : backpack) {
+            if (item.getName().equals(itemName)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     public String getName() {
@@ -80,11 +82,6 @@ public class Player {
         this.currentRoom = currentRoom;
     }
 
-//    public void updateItemsRoomNumberInBackpack() {
-//        for(Item item : backpack){
-//            item.setCurrentRoom(getCurrentRoom());
-//        }
-//    }
 }
 
 

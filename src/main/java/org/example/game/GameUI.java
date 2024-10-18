@@ -25,7 +25,7 @@ public class GameUI {
          System.out.println("4. Investigate room");
          System.out.println("5. Exit");
 
-         String choice = sc.nextLine();
+         String choice = sc.nextLine().trim();
 
          switch(choice) {
              case "1": //moving forward one room

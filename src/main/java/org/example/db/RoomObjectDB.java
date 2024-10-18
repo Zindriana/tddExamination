@@ -1,14 +1,13 @@
 package org.example.db;
 
-import org.example.models.Room;
-import org.example.models.RoomObjects.RoomObject;
+import org.example.models.RoomObjects.*;
 
 public class RoomObjectDB {
 
     private RoomObject[] roomObjects = new RoomObject[10];
 
     public RoomObjectDB() {
-
+        roomObjects[0] = new Bench();
     }
 
     public RoomObject getRoomObjects(String objectName) {

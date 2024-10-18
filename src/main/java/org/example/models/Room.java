@@ -1,6 +1,6 @@
 package org.example.models;
 
-import org.example.game.Text;
+import org.example.game.*;
 import org.example.models.RoomObjects.RoomObject;
 import org.example.models.items.Item;
 
@@ -15,7 +15,7 @@ public class Room {
     private final String descriptionWhenEnteringRoom;
     private String descriptionOnInvestigateRoom;
     public List<Item> itemsInRoom = new ArrayList<Item>();
-    private List<RoomObject> objectsInRoom = new ArrayList<>();
+    public List<RoomObject> objectsInRoom = new ArrayList<>();
     private NPC npcInRoom;
     private final Text output = new Text();
     private boolean isDoorLocked = true;
@@ -71,12 +71,6 @@ public class Room {
         }
     }
 
-    //setters
-    public void setNpcInRoom(NPC npcInRoom) {
-        this.npcInRoom = npcInRoom;
-
-    }
-
     //get a list of all objects in the room
     public void getListOfObjects() {
         if (objectsInRoom.isEmpty()) {
@@ -95,6 +89,7 @@ public class Room {
         } else {
             System.out.println("\nIt is to dark to see any items in here.");
         }
+        Clue.setRoomIsInvestigated(roomNumber);
     }
 
     public boolean getIsDoorLocked() {
@@ -113,4 +108,9 @@ public class Room {
         this.descriptionOnInvestigateRoom = newDescription;
     }
 
+    //setters
+    public void setNpcInRoom(NPC npcInRoom) {
+        this.npcInRoom = npcInRoom;
+
+    }
 }

@@ -25,7 +25,7 @@ public class Text {
             case "Starting room":
                 return " The room is barely lit by a few candles and you feel a light breeze. " +
                         "You see something small glowing on the dark stone floor.\n " +
-                        "It is " + getItemDescription("Die").toLowerCase() +
+                        "It is " + getItemDescription("Die").toLowerCase() + //change to a hard coded description instead for die
                         " You also see a " + getNpcDescription("Hooded figure").toLowerCase() +
                         " standing next to a large wooden door. \n It seems like the door is the only way out of here.";
 
@@ -63,9 +63,9 @@ public class Text {
     public String getObjectDescription(String objectName) {
         switch (objectName){
             case "Bench":
-                return "a long tree bench";
-            case "doorknob":
-                return "a electrical doorKnob to open the door.";
+                return "a long wooden bench";
+            case "place holder":
+                return "place holder";
 
             default:
                 return null;
