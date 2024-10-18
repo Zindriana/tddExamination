@@ -37,6 +37,7 @@ public class Die extends Item {
                     "You will not be able to open it at the moment. You also detect where the cold wind is coming from. \n" +
                     "There is a somewhat big hole at the top of the wall near the roof on the same side as the door. \n" +
                     "Unfortunately, it is to high up to reach." );
+            room.setRoomDark(false);
         }
     }
 

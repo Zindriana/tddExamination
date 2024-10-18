@@ -1,14 +1,17 @@
 package org.example.models.RoomObjects;
 
+import org.example.game.Text;
+
 public class RoomObject {
     // fields
-    private String name;
+    private final String name;
     private String description;
+    private Text output = new Text();
 
     // constructor
     public RoomObject(String name) {
         this.name = name;
-        this.description = name;
+        this.description = output.getObjectDescription(name);
     }
 
     //getters
@@ -18,6 +21,11 @@ public class RoomObject {
 
     public String getDescription() {
         return description;
+    }
+
+    public void interactWithObject(){
+        System.out.println("You investigate the " + name + ".\n" +
+                " it is a" + description + ".");
     }
 
 }
