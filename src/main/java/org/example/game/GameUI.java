@@ -28,7 +28,7 @@ public class GameUI {
          String choice = sc.nextLine();
 
          switch(choice) {
-             case "1":
+             case "1": //moving forward one room
                  try {  // try catch block för att inte krasha koden när undantaget för att flytta för långt fram kastas
                      player.moveForward();
                  } catch (IllegalStateException e) {
@@ -36,7 +36,7 @@ public class GameUI {
                  }
                  break;
 
-             case "2":
+             case "2": //moving backward one room
                  try {
                      player.moveBack();
                  } catch (IllegalStateException e) {
@@ -44,7 +44,7 @@ public class GameUI {
                  }
                  break;
 
-             case "3":
+             case "3": //checking items in backpack
                  try {
                      player.checkBackpack();
                  } catch (IllegalStateException e) {
@@ -52,12 +52,16 @@ public class GameUI {
                  }
                  break;
 
-             case "4":
+             case "4": //investigate the room
                  game.InvestigateRoomOption();
                  break;
 
-             case "5":
-                 on = false;
+             case "5": //exits the game
+                 System.out.println("Are you sure you want to exit the game? (y/n)");
+                 String answer = sc.nextLine();
+                 if(answer.toLowerCase().equals("y")) {
+                     on = false;
+                 }
                  break;
              default:
                  break;
