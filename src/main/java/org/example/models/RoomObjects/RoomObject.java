@@ -1,6 +1,7 @@
 package org.example.models.RoomObjects;
 
 import org.example.game.Text;
+import org.example.models.Player;
 import org.example.models.Room;
 
 public class RoomObject {
@@ -24,9 +25,8 @@ public class RoomObject {
         return description;
     }
 
-    public void interactWithObject(Room room){
+    public void interactWithObject(Room room, Player player) {
         System.out.println("You investigate the " + name + ".\n" +
                 " it is a" + description + ".");
     }
-
 }
