@@ -84,6 +84,8 @@ public class Room {
     public void investigateRoom() {
         System.out.println(getDescriptionOnInvestigateRoom());
         if(!isRoomDark) {
+            System.out.println("\nObjects in the room: ");
+            getListOfObjects();
             System.out.println("\nItems in the room: ");
             getListOfItems();
         } else {
