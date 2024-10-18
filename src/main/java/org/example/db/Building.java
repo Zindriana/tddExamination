@@ -7,6 +7,7 @@ public class Building {
     private final Room[] rooms = new Room[4];
     private final NpcDB npcDB = new NpcDB();
     private final ItemDB itemDB = new ItemDB();
+    private final RoomObjectDB roomObjectDB = new RoomObjectDB();
 
     public Building(){
         //adding rooms
@@ -20,6 +21,7 @@ public class Building {
         rooms[0].setNpcInRoom(npcDB.getNPC("Hooded figure"));
         rooms[0].itemsInRoom.add(itemDB.getItem("Die"));
         rooms[0].itemsInRoom.add(itemDB.getItem("Candle"));
+        rooms[0].objectsInRoom.add(roomObjectDB.getRoomObjects("Bench"));
 
         //room 2
         rooms[1].setRoomDark(true);
