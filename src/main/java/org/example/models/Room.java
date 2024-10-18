@@ -89,7 +89,7 @@ public class Room {
             System.out.println("\nItems in the room: ");
             getListOfItems();
         } else {
-            System.out.println("\nIt is to dark to see any items in here.");
+            System.out.println("\nIt is too dark to see anything in here.");
         }
         Clue.setRoomIsInvestigated(roomNumber);
     }
