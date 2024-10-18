@@ -105,6 +105,10 @@ public class Room {
         this.isDoorLocked = doorIsLocked;
     }
 
+    public void setRoomDark(boolean roomDark) {
+        this.isRoomDark = roomDark;
+    }
+
     public void setDescriptionOnInvestigateRoom(String newDescription) {
         this.descriptionOnInvestigateRoom = newDescription;
     }
