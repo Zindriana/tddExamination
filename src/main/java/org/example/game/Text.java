@@ -64,9 +64,13 @@ public class Text {
         switch (objectName){
             case "Bench":
                 return "a long wooden bench";
-            case "place holder":
-                return "place holder";
-
+            case "Large hole":
+                return "A large hole in the wall. The hole is to high up on the wall for you\n" +
+                        "to be able to investigate it further. But it seems to go to the other room \n" +
+                        "and a cold wind is swooshing out of there.";
+            case "Circle of candles":
+                return "There are some white candles forming a circle around where you woke up.\n" +
+                        "They give some light and warmth in this cold and dark dungeon.";
             default:
                 return null;
         }
