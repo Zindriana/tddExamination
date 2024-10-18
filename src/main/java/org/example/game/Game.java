@@ -49,7 +49,7 @@ public class Game {
                 }
                 break;
             case "2": //Interact with object
-                System.out.println("This option is disabled for the moment");
+                System.out.println("Enter the index of the object: ");
                 int objectIndex = sc.nextInt();
                 try {
                     getRoom(player.getCurrentRoom()).objectsInRoom.get(objectIndex).interactWithObject(getRoom(player.getCurrentRoom()));;
