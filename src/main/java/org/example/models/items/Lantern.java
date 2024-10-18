@@ -10,8 +10,8 @@ public class Lantern extends Item {
         super("Lantern");
     }
 
-    @Override
-    public void use(Room room){
-        if()
-    }
+//    @Override
+//    public void use(Room room){
+//        if()
+//    }
 }
