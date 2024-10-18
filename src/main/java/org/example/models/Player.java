@@ -12,6 +12,7 @@ public class Player {
     private final String name;
     private int currentRoom;
     public List<Item> backpack = new ArrayList<>();
+    //private List<Clue> clues = new ArrayList<>();
     private final Building building;
 
 
