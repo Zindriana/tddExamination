@@ -52,7 +52,7 @@ public class Game {
                 System.out.println("Enter the index of the object: ");
                 int objectIndex = sc.nextInt();
                 try {
-                    getRoom(player.getCurrentRoom()).objectsInRoom.get(objectIndex).interactWithObject(getRoom(player.getCurrentRoom()));;
+                    getRoom(player.getCurrentRoom()).objectsInRoom.get(objectIndex).interactWithObject(getRoom(player.getCurrentRoom()), player);;
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("You must choose another index");
                 }
