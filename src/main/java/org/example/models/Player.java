@@ -4,6 +4,7 @@ import org.example.db.Building;
 import org.example.models.items.Item;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,13 +52,20 @@ public class Player {
         for (int i = 0; i < backpack.size(); i++) {
             System.out.println((i) + ". " + backpack.get(i).getName());
         }
-        System.out.println("Do you want to use an item? (y/n)");
+        System.out.println("Which item do you want to use? (choose a number not in the backpack to exit)");
         Scanner sc = new Scanner(System.in);
-        String choice = sc.nextLine();
-        if (choice.equals("y")) {
-            System.out.println("Choose the item you want to use with index nr");
-            int choice2 = sc.nextInt();
-            backpack.get(choice2).use(building.getRoom(getCurrentRoom()));
+        while (true) {
+            try {
+                int choice = sc.nextInt();
+                if (choice < 0 || choice >= backpack.size()) {
+                    break;
+                }
+                backpack.get(choice).use(building.getRoom(getCurrentRoom()));
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Must choose a valid number");
+                sc.next();
+            }
         }
     }
 
