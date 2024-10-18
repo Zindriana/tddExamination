@@ -6,6 +6,7 @@ import org.example.models.NPC;
 import org.example.models.Player;
 import org.example.models.Room;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
@@ -46,15 +47,21 @@ public class Game {
                     getPlayer().backpack.add(getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex));
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("You must choose another index");
+                } catch (IllegalStateException i){
+                    System.out.println("Must choose a number");
                 }
+
                 break;
             case "2": //Interact with object
                 System.out.println("Enter the index of the object: ");
-                int objectIndex = sc.nextInt();
                 try {
+                    int objectIndex = sc.nextInt();
                     getRoom(player.getCurrentRoom()).objectsInRoom.get(objectIndex).interactWithObject(getRoom(player.getCurrentRoom()), player);;
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("You must choose another index");
+
+                } catch (InputMismatchException i){
+                    System.out.println("Must choose a number");
                 }
                 break;
             case "3": //Interact with npc
