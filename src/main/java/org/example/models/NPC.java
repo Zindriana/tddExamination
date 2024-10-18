@@ -1,7 +1,5 @@
 package org.example.models;
 
-import org.example.puzzles.PuzzleUtil;
-import org.example.puzzles.Puzzles;
 import org.example.game.Text;
 
 import java.util.Scanner;
@@ -9,9 +7,7 @@ import java.util.Scanner;
 public class NPC {
 
     private final Scanner sc = new Scanner(System.in);
-    private String hint;
-    private Puzzles puzzle;
-    private String name;
+    private final String name;
     private String description;
     private final Text output = new Text();
 
@@ -24,16 +20,8 @@ public class NPC {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
 
@@ -66,6 +54,7 @@ public class NPC {
                     break;
                 default:
                     isConversationActive = false;
+                    System.out.println("Good luck hehe");
                     break;
             }
         }
