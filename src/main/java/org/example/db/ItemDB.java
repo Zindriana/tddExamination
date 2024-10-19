@@ -9,7 +9,7 @@ public class ItemDB {
 
         items[0] = new Die();
         items[1] = new Candle();
-        items[2] = new Item("Key");
+        items[2] = new Lantern();
     }
 
     public Item getItem(String itemName) {
