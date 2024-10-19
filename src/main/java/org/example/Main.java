@@ -15,7 +15,8 @@ import org.example.game.GameUI;
 *   - instead of needing to press investigate over and over again, make it a do while until the player stops investigating
 *   - maybe add so that the player can use items on objects in the room while investigating
 *   - check the bug when trying to move the bench from the first room to the second room, it loops while pressing y
-*       and then it repeats the same thing when pressing n*/
+*       and then it repeats the same thing when pressing n
+*   - check why checkBackPack returns null and crashes the game*/
 
 public class Main {
 
