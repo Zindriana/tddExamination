@@ -16,6 +16,6 @@ public class SmallShiningThing extends RoomObject {
                 "You hear the hooded figure gives away a silent chuckle when \n" +
                 "you put it in your pocket.");
         Player.backpack.add(room.getItem("Die"));
-        room.objectsInRoom.remove(room.getRoomObject("SmallShiningThing"));
+        room.objectsInRoom.remove(room.getRoomObject("Small Shining Thing"));
         }
     }
