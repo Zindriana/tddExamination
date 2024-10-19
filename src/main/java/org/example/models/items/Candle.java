@@ -28,7 +28,14 @@ public class Candle extends Item{
         } else {
             System.out.println("You hold up the candle and spread the light through the room.");
         }
+    }
 
+    public void setLit(boolean lit) {
+        isLit = lit;
+    }
+
+    public boolean isLit() {
+        return isLit;
     }
 
 }
