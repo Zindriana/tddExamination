@@ -19,12 +19,13 @@ public class Building {
         //adding stuff to the rooms
         //room 1
         rooms[0].setNpcInRoom(npcDB.getNPC("Hooded figure"));
-        rooms[0].itemsInRoom.add(itemDB.getItem("Die"));
-        rooms[0].itemsInRoom.add(itemDB.getItem("Candle"));
         rooms[0].objectsInRoom.add(roomObjectDB.getRoomObjects("Bench"));
+        rooms[0].objectsInRoom.add(roomObjectDB.getRoomObjects("Small Shining Thing"));
+        rooms[0].objectsInRoom.add(roomObjectDB.getRoomObjects("CircleOfCandles"));
 
         //room 2
         rooms[1].setRoomDark(true);
+        rooms[1].objectsInRoom.add(roomObjectDB.getRoomObjects("Large hole"));
     }
 
     public int getNumberOfRooms() {
