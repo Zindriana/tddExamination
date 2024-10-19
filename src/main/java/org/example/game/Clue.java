@@ -1,13 +1,14 @@
 package org.example.game;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Clue {
 
     public static boolean[] roomIsInvestigated = new boolean[4];
+    public static boolean candleIsLit = true;
+    public static boolean benchIsInSecondRoom = false;
 
     public static void setRoomIsInvestigated(int roomNumber) {
         roomIsInvestigated[roomNumber] = true;
     }
+
 }
