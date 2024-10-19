@@ -8,6 +8,9 @@ public class RoomObjectDB {
 
     public RoomObjectDB() {
         roomObjects[0] = new Bench();
+        roomObjects[1] = new LargeHole();
+        roomObjects[2] = new SmallShiningThing();
+        roomObjects[3] = new CircleOfCandles();
     }
 
     public RoomObject getRoomObjects(String objectName) {
