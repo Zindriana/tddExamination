@@ -71,6 +71,15 @@ public class Room {
         }
     }
 
+    public Item getItem(String itemName) {
+        for (Item item : itemsInRoom) {
+            if (item.getName().equals(item)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     //get a list of all objects in the room
     public void getListOfObjects() {
         if (objectsInRoom.isEmpty()) {
