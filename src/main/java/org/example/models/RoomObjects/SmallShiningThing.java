@@ -15,5 +15,7 @@ public class SmallShiningThing extends RoomObject {
         System.out.println(getDescription());
         Player.backpack.add(new Die());
         room.objectsInRoom.remove(room.getRoomObject(getName()));
+        //update the room description in room one, the player shouldn´t get info about a shiny thing anymore
+        //Check if it is possible to just remove that one sentence. Then it doesn´t disturb other potential changes.
         }
     }
