@@ -24,14 +24,13 @@ public class Text {
         switch(roomName){
             case "Starting room":
                 return " The room is barely lit by a few candles and you feel a light breeze. " +
-                        "You see something small glowing on the dark stone floor.\n " +
-                        "It is " + getItemDescription("Die").toLowerCase() + //change to a hard coded description instead for die
+                        "You see something small glowing on the dark stone floor among some pebbles.\n " +
                         " You also see a " + getNpcDescription("Hooded figure").toLowerCase() +
-                        " standing next to a large wooden door. \n It seems like the door is the only way out of here.";
+                        " standing in the shadows next to a large wooden door. \n " +
+                        "It seems like the door is the only way out of here.";
 
             case "Middle room":
                 return " You hear droplets drop on the cavern ground and the stones feel cold against your bare feet.\n" +
-                        "Unfortunately it is too dark to see anything in here and \n" +
                         "the cold breeze that you felt in the previous room is much stronger in here.";
             case "Third room":
                 return " place holder third room";
@@ -63,7 +62,7 @@ public class Text {
     public String getObjectDescription(String objectName) {
         switch (objectName){
             case "Bench":
-                return "a long wooden bench";
+                return "It is just a simple wooden bench. It seems heavy though.";
             case "Large hole":
                 return "A large hole in the wall. The hole is to high up on the wall for you\n" +
                         "to be able to investigate it further. But it seems to go to the other room \n" +
@@ -71,6 +70,11 @@ public class Text {
             case "Circle of candles":
                 return "There are some white candles forming a circle around where you woke up.\n" +
                         "They give some light and warmth in this cold and dark dungeon.";
+            case "A small shining thing":
+                return "\"You see a small shining thing among some stones.\n" +
+                        " It is a white bright six sided die that emit a weak light.\n" +
+                        " You hear the hooded figure gives away a silent chuckle when\n" +
+                        " you put it in your pocket.";
             default:
                 return null;
         }
