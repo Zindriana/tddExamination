@@ -34,6 +34,7 @@ public class Bench extends RoomObject{
                 room.objectsInRoom.remove(room.getRoomObject("Bench"));
                 player.setCurrentRoom(1);
                 player.getRoom().objectsInRoom.add(bench);
+                room = player.getRoom();
                 room.setDescriptionOnInvestigateRoom(" rummet med bänk");
 
             }
