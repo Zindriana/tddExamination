@@ -28,6 +28,7 @@ public class Bench extends RoomObject{
                 room.setDescriptionOnInvestigateRoom(" rummet utan bänk");
                 System.out.println("You drag it slowly to the other room. You feel a little bit exhausted.");
                 isInRoom = 1;
+                Clue.benchIsInSecondRoom = true;
                 RoomObject bench = room.getRoomObject("Bench");
                 room.objectsInRoom.remove(room.getRoomObject("Bench"));
                 player.setCurrentRoom(1);
