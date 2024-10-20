@@ -20,7 +20,7 @@ public class Building {
         //room 1
         rooms[0].setNpcInRoom(npcDB.getNPC("Hooded figure"));
         rooms[0].objectsInRoom.add(roomObjectDB.getRoomObjects("Bench"));
-        rooms[0].objectsInRoom.add(roomObjectDB.getRoomObjects("Small Shining Thing"));
+        rooms[0].objectsInRoom.add(roomObjectDB.getRoomObjects("A small shining thing"));
         rooms[0].objectsInRoom.add(roomObjectDB.getRoomObjects("Circle of Candles"));
 
         //room 2
