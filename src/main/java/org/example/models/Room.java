@@ -95,8 +95,8 @@ public class Room {
         if(!isRoomDark) {
             System.out.println("\nObjects in the room: ");
             getListOfObjects();
-            System.out.println("\nItems in the room: ");
-            getListOfItems();
+//            System.out.println("\nItems in the room: ");
+//            getListOfItems();
         } else {
             System.out.println("\nIt is too dark to see anything in here.");
         }
