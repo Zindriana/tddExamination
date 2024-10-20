@@ -3,6 +3,7 @@ package org.example.models.RoomObjects;
 import org.example.game.Clue;
 import org.example.models.Player;
 import org.example.models.Room;
+import org.example.models.items.Candle;
 
 public class CircleOfCandles extends RoomObject{
 
@@ -16,7 +17,7 @@ public class CircleOfCandles extends RoomObject{
             System.out.println("\"There are some white candles forming a circle around where you woke up.\n" +
                     "They give some light and warmth in this cold and dark dungeon.\n" +
                     "It would probably be wise to take on of them with you");
-            Player.backpack.add(room.getItem("Candle"));
+            Player.backpack.add(new Candle());
 
         } else if (Clue.candleIsLit) {
             System.out.println("You rest for a moment near the candles.\n" +
