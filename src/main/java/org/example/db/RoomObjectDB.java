@@ -4,7 +4,7 @@ import org.example.models.RoomObjects.*;
 
 public class RoomObjectDB {
 
-    private RoomObject[] roomObjects = new RoomObject[10];
+    private final RoomObject[] roomObjects = new RoomObject[10];
 
     public RoomObjectDB() {
         roomObjects[0] = new Bench();
