@@ -3,6 +3,7 @@ package org.example.models.RoomObjects;
 import org.example.game.Clue;
 import org.example.models.Player;
 import org.example.models.Room;
+import org.example.models.items.Lantern;
 
 import java.util.Scanner;
 
@@ -47,7 +48,7 @@ public class Bench extends RoomObject{
                     full of ice and blue frozen walls.
                     You take the lantern with you down.
                     """);
-            Player.backpack.add(room.getItem("Lantern"));
+            Player.backpack.add(new Lantern());
         } else if(Clue.roomIsInvestigated[1] && isInRoom == 1 && Player.backpack.contains(room.getItem("Lantern"))){
             System.out.println("The bench is now cold to touch and you don´t want to drain your stamina on moving it again.");
         }
