@@ -39,19 +39,6 @@ public class Game {
             Scanner sc = new Scanner(System.in);
             String choice = sc.nextLine().trim();
             switch (choice) {
-    //            case "1": //Pick up an item
-    //                System.out.println("Enter the index of the item: ");
-    //                int itemIndex = sc.nextInt();
-    //                try {
-    //                    getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex).pickUp();
-    //                    getPlayer().backpack.add(getRoom(player.getCurrentRoom()).itemsInRoom.get(itemIndex));
-    //                } catch (IndexOutOfBoundsException e) {
-    //                    System.out.println("You must choose another index");
-    //                } catch (IllegalStateException i){
-    //                    System.out.println("Must choose a number");
-    //                }
-    //
-    //                break;
                 case "1": //Interact with object
                     System.out.println("Enter the index of the object: ");
                     try {
